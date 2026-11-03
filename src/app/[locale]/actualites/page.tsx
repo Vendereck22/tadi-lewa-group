@@ -1,33 +1,41 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
+import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Suspense, use } from "react";
 import { NewsList } from "@/components/sections/news-list";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
 import { FeaturedNewsCard } from "@/components/shared/news-card";
 import { PageHeader } from "@/components/shared/page-header";
 import { news } from "@/lib/data/news";
 
-export const metadata: Metadata = {
-  title: "Actualités & Publications",
-  description: "Restez informés des activités, événements et réalisations de TADI LEWA GROUP SARLU.",
-};
+export async function generateMetadata({ params }: PageProps<"/[locale]/actualites">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "newsPage.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
-export default function ActualitesPage() {
+export default function ActualitesPage({ params }: PageProps<"/[locale]/actualites">) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+  const t = useTranslations("newsPage.header");
+  const tn = useTranslations("news");
   const featured = news.find((item) => item.featured);
 
   return (
     <main>
       <PageHeader
-        crumb="Actualités"
+        crumb={t("crumb")}
         title={
           <>
-            Actualités <span className="text-brand">&amp;</span> Publications
+            {t("titleStart")} <span className="text-brand">{t("titleHighlight")}</span>{" "}
+            {t("titleEnd")}
           </>
         }
-        description="Restez informés de nos activités, événements et réalisations."
+        description={t("description")}
       />
 
       {featured && (
-        <section aria-label="Publication à la une" className="container-site pt-12 md:pt-16">
+        <section aria-label={tn("featuredLabel")} className="container-site pt-12 md:pt-16">
           <FeaturedNewsCard item={featured} showFeaturedBadge headingLevel="h2" preload />
         </section>
       )}

@@ -6,7 +6,7 @@ import { newsletterSchema, type NewsletterValues } from "@/lib/schemas/contact";
 export async function subscribeNewsletter(values: NewsletterValues): Promise<ActionResult> {
   const parsed = newsletterSchema.safeParse(values);
   if (!parsed.success) {
-    return { ok: false, error: "Adresse email invalide." };
+    return { ok: false, error: "emailInvalid" };
   }
 
   // TODO : brancher un vrai service d'emailing (Brevo, Mailchimp, Resend…). Pour l'instant

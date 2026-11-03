@@ -1,0 +1,584 @@
+{
+  "meta": {
+    "title": "TADI LEWA GROUP SARLU",
+    "template": "%s | TADI LEWA GROUP",
+    "description": "TADI LEWA GROUP SARLU: support for entrepreneurs, business solutions, partnerships and training in Kinshasa."
+  },
+  "common": {
+    "home": "Home",
+    "newTab": "(opens in a new tab)",
+    "learnMore": "Learn more",
+    "appointment": "Book an appointment",
+    "contactUs": "Contact us",
+    "seeOnFacebook": "View on Facebook",
+    "sending": "Sending…",
+    "kinshasa": "Kinshasa, DRC"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact",
+    "main": "Main navigation",
+    "mobile": "Mobile navigation",
+    "footer": "Footer navigation",
+    "openMenu": "Open menu",
+    "menuDescription": "Site navigation menu"
+  },
+  "theme": {
+    "toggle": "Change theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "label": "Site language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "logo": {
+    "home": "TADI LEWA GROUP SARLU, back to home"
+  },
+  "contactInfo": {
+    "addressLines": ["43 Bis, Avenue Colonel Mpia", "Joli-Parc, Ngaliema – Kinshasa"],
+    "shortAddress": "43 Bis, Av. Colonel Mpia, Joli-Parc, Ngaliema – Kinshasa",
+    "hours": "Monday to Saturday, 7:00 am – 6:00 pm",
+    "shortHours": "Mon – Sat: 7:00 am – 6:00 pm",
+    "hoursLines": ["Monday – Saturday: 7:00 am – 6:00 pm", "Sunday: closed"],
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "openingHours": "Opening hours"
+  },
+  "footer": {
+    "slogan": "Together, let's build a better future.",
+    "navigation": "Navigation",
+    "follow": "Follow us",
+    "rights": "All rights reserved."
+  },
+  "hero": {
+    "badge": "Welcome to TADI LEWA GROUP SARLU",
+    "titleStart": "Together, let's build",
+    "titleHighlight": "a better future",
+    "description": "We support Congolese entrepreneurs and businesses in building a thriving entrepreneurial future through innovation and lasting partnerships.",
+    "highlights": ["Innovation", "Commitment", "Lasting impact"],
+    "primary": "Discover our mission",
+    "secondary": "Contact us"
+  },
+  "values": {
+    "label": "Our values",
+    "items": {
+      "innovation": { "title": "Innovation", "subtitle": "driving progress" },
+      "partnership": { "title": "Partnership", "subtitle": "for lasting impact" },
+      "commitment": { "title": "Commitment", "subtitle": "to our community" },
+      "development": { "title": "Development", "subtitle": "for a thriving Congo" }
+    }
+  },
+  "servicesSection": {
+    "eyebrow": "Our services",
+    "title": "Solutions to help your projects grow",
+    "intro": "Advice, training, support and networking: we are by your side at every stage of your entrepreneurial journey."
+  },
+  "services": {
+    "entrepreneurs": {
+      "title": "Support for entrepreneurs",
+      "summary": "Advice, training and support to grow your projects, from idea to launch.",
+      "description": "Have an idea or a young business? We help you structure your project, build your skills and move through each stage with a clear method.",
+      "features": [
+        "Project advice and assessment",
+        "Business plan development",
+        "Personal coaching and follow-up",
+        "Preparation for fairs and competitions"
+      ],
+      "cta": "Get support"
+    },
+    "entreprises": {
+      "title": "Business solutions",
+      "summary": "Tailored services to structure, develop and boost your business.",
+      "description": "Tailored services to structure your organisation, strengthen your teams and boost your business on the Congolese market.",
+      "features": [
+        "Management and strategy consulting",
+        "Team training",
+        "Visibility and communication",
+        "Event organisation"
+      ],
+      "cta": "Request a proposal"
+    },
+    "partenariats": {
+      "title": "Partnerships and opportunities",
+      "summary": "Creating more opportunities together: business networking, events and connections.",
+      "description": "Creating more opportunities together: we connect entrepreneurs, businesses, institutions and investors around concrete projects.",
+      "features": [
+        "Business networking",
+        "Event sponsorship",
+        "Joint impact projects",
+        "Network of experts and speakers"
+      ],
+      "cta": "Become a partner"
+    }
+  },
+  "vision": {
+    "eyebrow": "About us",
+    "title": "Our vision",
+    "lead": "To be a trusted partner for sustainable development.",
+    "text": "TADI LEWA GROUP SARLU brings together a dynamic and committed team around one belief: entrepreneurship is the driving force of a thriving Congo. [Add the company's history, mission and key figures here.]",
+    "highlights": [
+      "Training & advice",
+      "Entrepreneurial events",
+      "Partner network",
+      "Impact projects"
+    ]
+  },
+  "explore": {
+    "eyebrow": "Explore",
+    "title": "TADI LEWA GROUP at a glance",
+    "items": {
+      "news": "News",
+      "events": "Events",
+      "training": "Training",
+      "upcoming": "Upcoming projects",
+      "archives": "Archives",
+      "partnerships": "Partnerships"
+    }
+  },
+  "teamPreview": {
+    "eyebrow": "Our team",
+    "title": "Behind every success, an outstanding team",
+    "text": "A dynamic and committed team taking the vision of TADI LEWA GROUP SARLU further: management, programmes, events and communication, working for entrepreneurs.",
+    "cta": "Meet the team"
+  },
+  "newsSection": {
+    "eyebrow": "News & Publications",
+    "title": "Stay up to date with our activities",
+    "all": "All publications"
+  },
+  "news": {
+    "categories": {
+      "evenement": "Event",
+      "formation": "Training",
+      "projet-a-venir": "Upcoming project",
+      "archives": "Archives"
+    },
+    "allFilter": "All",
+    "featured": "Featured",
+    "noDate": "[Date]",
+    "items": {
+      "presentation-equipe": {
+        "title": "Meet the team",
+        "excerpt": "A dynamic and committed team taking the vision of TADI LEWA GROUP SARLU further."
+      },
+      "made-in-congo-2": {
+        "title": "MADE IN CONGO – 2nd edition",
+        "excerpt": "The entrepreneurship fair showcasing Congolese know-how."
+      },
+      "preparation-entrepreneurs": {
+        "title": "Preparing with our entrepreneurs",
+        "excerpt": "Working sessions to get exhibitors ready for the fair."
+      },
+      "intervenants": {
+        "title": "Our speakers",
+        "excerpt": "Committed experts and leaders sharing their experience."
+      },
+      "foire-conference": {
+        "title": "Entrepreneurship fair & conference: a shared success",
+        "excerpt": "Looking back on a day full of exchanges, meetings and opportunities."
+      },
+      "merci-equipe": {
+        "title": "Behind every success, an outstanding team",
+        "excerpt": "Thank you to the whole team who made these events possible."
+      },
+      "prochain-projet": {
+        "title": "[Title of the next project]",
+        "excerpt": "[Present the group's next event or project here.]"
+      }
+    },
+    "featuredLabel": "Featured publication",
+    "listTitle": "All publications",
+    "filterLabel": "Filter publications by category",
+    "emptyTitle": "No publications in this category",
+    "emptyText": "Check back soon or browse all our publications."
+  },
+  "cta": {
+    "home": {
+      "titleStart": "Have a project?",
+      "titleEnd": "Let's talk.",
+      "description": "Book an appointment with our team and let's build a thriving entrepreneurial future together."
+    },
+    "join": {
+      "title": "Want to join the team?",
+      "description": "Internships, volunteering or collaborations: send us your application and tell us what motivates you.",
+      "cta": "Send my application",
+      "subject": "Application – TADI LEWA GROUP"
+    },
+    "about": {
+      "title": "Join the TADI LEWA journey",
+      "description": "Entrepreneur, business or partner: let's build tomorrow's successes together."
+    },
+    "services": {
+      "title": "Which service is right for you?",
+      "description": "A first conversation helps us define together the support that best fits your project."
+    }
+  },
+  "contactSection": {
+    "eyebrow": "Contact",
+    "title": "Come and meet us",
+    "description": "Together, let's build a better future through innovation and lasting partnerships.",
+    "formTitle": "Send us a message"
+  },
+  "form": {
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "phone": "Phone",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Choose a subject",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "send": "Send message",
+    "sendRequest": "Send my request",
+    "profile": "You are",
+    "date": "Preferred date",
+    "datePlaceholder": "Choose a date",
+    "subjects": {
+      "rendez-vous": "Book an appointment",
+      "accompagnement": "Entrepreneur support",
+      "solution-entreprise": "Business solution",
+      "partenariat": "Partnership",
+      "formation": "Training",
+      "autre": "Other"
+    },
+    "profiles": {
+      "entrepreneur": "Entrepreneur",
+      "entreprise": "Business",
+      "partenaire": "Partner",
+      "autre": "Other"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "phoneTooShort": "Phone number too short",
+      "emailInvalid": "Invalid email address",
+      "subjectRequired": "Please choose a subject",
+      "messageTooShort": "Message too short",
+      "invalid": "Some fields are invalid."
+    },
+    "messageSent": "Thank you, your message has been sent",
+    "messageSentText": "Our team will get back to you as soon as possible.",
+    "requestSent": "Thank you, your request has been sent",
+    "requestSentText": "Our team will contact you to confirm the appointment."
+  },
+  "newsletter": {
+    "title": "Never miss an update",
+    "text": "Get our event, training and opportunity announcements straight to your inbox.",
+    "label": "Email address",
+    "placeholder": "Your email address",
+    "submit": "Subscribe",
+    "success": "Thank you, you're subscribed",
+    "successText": "You'll receive our next announcements by email."
+  },
+  "about": {
+    "meta": {
+      "title": "About us",
+      "description": "Find out who we are, what drives us and the team behind the vision of TADI LEWA GROUP SARLU."
+    },
+    "header": {
+      "crumb": "About",
+      "titleStart": "Building together a",
+      "titleHighlight": "thriving entrepreneurial future",
+      "description": "Find out who we are, what drives us and the team that carries the vision of TADI LEWA GROUP SARLU every day."
+    },
+    "intro": {
+      "eyebrow": "Who we are",
+      "title": "A Congolese group dedicated to entrepreneurship",
+      "paragraphs": [
+        "TADI LEWA GROUP SARLU is a company based in Kinshasa, in the Ngaliema district. We support project leaders, young entrepreneurs and growing businesses by providing advice, training, visibility and partnership opportunities.",
+        "Through our events, such as the MADE IN CONGO entrepreneurship fair, we create spaces where entrepreneurs, experts and partners meet to bring high-impact projects to life.",
+        "[Add the year the company was founded, the founder's name and the company's story here.]"
+      ],
+      "services": "Our services",
+      "write": "Write to us"
+    },
+    "purpose": {
+      "eyebrow": "Our purpose",
+      "title": "Mission, vision and ambition",
+      "mission": {
+        "title": "Our mission",
+        "text": "To support entrepreneurs and businesses in the DRC through advice, training and assistance, turning ideas into viable and sustainable projects."
+      },
+      "vision": {
+        "title": "Our vision",
+        "text": "To be a trusted partner for sustainable development and a leading player in the Congolese entrepreneurial ecosystem."
+      },
+      "ambition": {
+        "title": "Our ambition",
+        "text": "To contribute to a thriving Congo by growing strong businesses that create jobs and value for their communities."
+      }
+    },
+    "values": {
+      "eyebrow": "Our values",
+      "title": "What guides everything we do",
+      "intro": "Four commitments we share with our entrepreneurs, our partners and our teams.",
+      "items": {
+        "innovation": {
+          "title": "Innovation",
+          "text": "We encourage new ideas and solutions adapted to local realities."
+        },
+        "partnership": {
+          "title": "Partnership",
+          "text": "We believe great successes are built together, on trust."
+        },
+        "commitment": {
+          "title": "Commitment",
+          "text": "We keep our promises and stay by our entrepreneurs' side for the long run."
+        },
+        "impact": {
+          "title": "Lasting impact",
+          "text": "Every project we support must create value for society and for the country."
+        }
+      }
+    },
+    "founder": {
+      "eyebrow": "A word from the founder",
+      "photoPlaceholder": "[Founder's photo]",
+      "portrait": "Portrait of {name}"
+    },
+    "members": {
+      "eyebrow": "Our people",
+      "title": "The women and men of TADI LEWA",
+      "filterLabel": "Filter members by department",
+      "all": "All",
+      "viewProfile": "View profile",
+      "linkLabel": "{network} of {name}"
+    },
+    "inAction": {
+      "eyebrow": "In the field",
+      "title": "The team in action",
+      "galleryLabel": "Photos of the team in the field",
+      "captions": {
+        "conference": "Entrepreneurship fair",
+        "training": "Preparing entrepreneurs",
+        "speakers": "Our speakers",
+        "fair": "MADE IN CONGO",
+        "team": "Meet the team"
+      },
+      "valuesLabel": "Our team values",
+      "values": {
+        "spirit": { "title": "Team spirit", "text": "Every success is a shared one." },
+        "proximity": { "title": "Closeness", "text": "Listening to every entrepreneur." },
+        "rigour": { "title": "High standards", "text": "Serious, professional work." },
+        "commitment": { "title": "Commitment", "text": "For a thriving Congo." }
+      }
+    },
+    "history": {
+      "eyebrow": "Our journey",
+      "title": "The milestones that shaped us",
+      "yearPlaceholder": "[Year]",
+      "upcoming": "Coming soon",
+      "items": {
+        "creation": {
+          "title": "TADI LEWA GROUP SARLU is founded",
+          "text": "[Tell the story of how the project started and its first actions.]"
+        },
+        "madeInCongo": {
+          "title": "MADE IN CONGO – 2nd edition",
+          "text": "The entrepreneurship fair brings together entrepreneurs, speakers and partners around Congolese know-how."
+        },
+        "fair": {
+          "title": "Entrepreneurship fair & conference",
+          "text": "A shared success driven by our entrepreneurs, our speakers and the whole team."
+        },
+        "next": {
+          "title": "[Next major project]",
+          "text": "[Present the group's next steps and ambitions here.]"
+        }
+      }
+    }
+  },
+  "team": {
+    "founder": {
+      "name": "[Founder's name]",
+      "role": "Founder & Managing Director, TADI LEWA GROUP SARLU",
+      "message": "[The founder's message: their belief, why they created TADI LEWA GROUP and what they want to bring to Congolese entrepreneurs.]"
+    },
+    "poles": {
+      "direction": "Management",
+      "programmes": "Programmes",
+      "evenements": "Events",
+      "communication": "Communication"
+    },
+    "members": {
+      "fondateur": {
+        "name": "[First and last name]",
+        "role": "Founder & Managing Director",
+        "bio": "[Background, expertise and role in the group.]"
+      },
+      "operations": {
+        "name": "[First and last name]",
+        "role": "[Operations Director]",
+        "bio": "[Background, expertise and role in the group.]"
+      },
+      "accompagnement": {
+        "name": "[First and last name]",
+        "role": "[Entrepreneur Support Manager]",
+        "bio": "[Follow-up and coaching of entrepreneurs.]"
+      },
+      "formation": {
+        "name": "[First and last name]",
+        "role": "[Trainer]",
+        "bio": "[Running training sessions.]"
+      },
+      "evenements": {
+        "name": "[First and last name]",
+        "role": "[Events Manager]",
+        "bio": "[Organising MADE IN CONGO and the fairs.]"
+      },
+      "partenariats": {
+        "name": "[First and last name]",
+        "role": "[Partnerships Officer]",
+        "bio": "[Relations with sponsors and partners.]"
+      },
+      "communication": {
+        "name": "[First and last name]",
+        "role": "[Communications Manager]",
+        "bio": "[Social media, brand image and press relations.]"
+      },
+      "photo-video": {
+        "name": "[First and last name]",
+        "role": "[Photographer / videographer]",
+        "bio": "[Event coverage and content.]"
+      }
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Our services",
+      "description": "Advice, training, business solutions and partnerships: end-to-end support, from idea to growth."
+    },
+    "header": {
+      "crumb": "Services",
+      "titleStart": "Services to",
+      "titleHighlight": "help your projects grow",
+      "description": "Advice, training, business solutions and partnerships: end-to-end support, from idea to growth."
+    },
+    "anchorsLabel": "Quick access to services",
+    "anchors": {
+      "entrepreneurs": "Entrepreneurs",
+      "entreprises": "Businesses",
+      "partenariats": "Partnerships",
+      "formation": "Training"
+    },
+    "serviceNumber": "Service {number}",
+    "method": {
+      "eyebrow": "Our method",
+      "title": "How we work with you",
+      "steps": {
+        "contact": {
+          "title": "First contact",
+          "text": "You present your project to us at a first meeting."
+        },
+        "diagnosis": {
+          "title": "Assessment",
+          "text": "We analyse your needs, your strengths and the areas to improve."
+        },
+        "plan": {
+          "title": "Action plan",
+          "text": "Together we build a clear and realistic roadmap."
+        },
+        "followUp": {
+          "title": "Follow-up",
+          "text": "We stay by your side to measure progress and adjust."
+        }
+      }
+    },
+    "training": {
+      "eyebrow": "Training",
+      "title": "Our training topics",
+      "intro": "Hands-on sessions, in groups or in-company. [Specify dates, durations and fees.]",
+      "topics": {
+        "entrepreneurship": { "title": "Entrepreneurship", "text": "From idea to viable project." },
+        "finance": { "title": "Management & finance", "text": "Keep your books and run your business." },
+        "marketing": { "title": "Marketing & sales", "text": "Find and retain customers." },
+        "digital": { "title": "Digital communication", "text": "Gain visibility on social media." },
+        "leadership": { "title": "Leadership", "text": "Lead and motivate a team." },
+        "funding": { "title": "Fundraising", "text": "Prepare a convincing application." }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "beneficiaires": {
+          "question": "Who can benefit from your services?",
+          "answer": "Project leaders, young entrepreneurs, SMEs and organisations looking to grow in the DRC."
+        },
+        "premier-rendez-vous": {
+          "question": "How does the first meeting work?",
+          "answer": "You present your project, then we analyse your needs together to define the right support. [Specify the length and location of the meeting.]"
+        },
+        "tarifs": {
+          "question": "What are your fees?",
+          "answer": "[Indicate your fees or how they are set here.] Contact us to receive a proposal tailored to your project."
+        },
+        "evenements": {
+          "question": "How can I take part in your events?",
+          "answer": "Our events, such as the MADE IN CONGO fair, are announced in our news and on Facebook. [Specify how to register.]"
+        }
+      }
+    }
+  },
+  "newsPage": {
+    "meta": {
+      "title": "News & Publications",
+      "description": "Stay up to date with the activities, events and achievements of TADI LEWA GROUP SARLU."
+    },
+    "header": {
+      "crumb": "News",
+      "titleStart": "News",
+      "titleHighlight": "&",
+      "titleEnd": "Publications",
+      "description": "Stay up to date with our activities, events and achievements."
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "A question, a project or a partnership idea? Book an appointment with TADI LEWA GROUP SARLU in Kinshasa."
+    },
+    "header": {
+      "crumb": "Contact",
+      "titleStart": "Let's talk about",
+      "titleHighlight": "your project",
+      "description": "A question, a project or a partnership idea? Our team will answer you and welcome you from Monday to Saturday."
+    },
+    "cardsLabel": "Our contact details",
+    "formTitle": "Book an appointment",
+    "formIntro": "Fill in this form and we'll get back to you as soon as possible.",
+    "mapTitle": "Map: TADI LEWA GROUP SARLU, 43 Bis, Avenue Colonel Mpia, Kinshasa",
+    "directions": "Directions",
+    "directionsHint": "(Google Maps, opens in a new tab)",
+    "directTitle": "Write to us directly",
+    "directText": "For a quick answer, contact us on WhatsApp or follow our news."
+  },
+  "images": {
+    "hero": "Three African women entrepreneurs working together around a laptop",
+    "vision": "Glass façade of a modern office building",
+    "teamEvent": "Participants gathered around tables at a conference",
+    "teamSpeaker": "A speaker addressing the audience on stage",
+    "teamPresentation": "A speaker presenting to an attentive room",
+    "aboutHeader": "Three colleagues discussing a project",
+    "aboutMain": "A team working around a table with laptops",
+    "aboutSecondary": "Team meeting in a bright room",
+    "servicesHeader": "Working session around a large meeting table",
+    "serviceEntrepreneurs": "A smiling young entrepreneur in her workspace",
+    "serviceEntreprises": "Business meeting around a laptop",
+    "servicePartenariats": "Handshake between two partners",
+    "contactHeader": "Welcoming a client with a handshake at the office",
+    "newsTeam": "Team members gathered for a group photo",
+    "newsFair": "Exhibitors in traditional outfits at a fair",
+    "newsTraining": "A trainer leading a session for a group of entrepreneurs",
+    "newsSpeakers": "A speaker addressing the audience from a podium",
+    "newsConference": "A full auditorium during a conference",
+    "newsArchives": "A large group gathered at an event",
+    "newsUpcoming": "Two people planning a project on a whiteboard"
+  }
+}

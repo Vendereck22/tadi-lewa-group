@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Newspaper } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { NewsGridCard } from "@/components/shared/news-card";
 import {
   Empty,
@@ -25,21 +26,16 @@ type Filter = NewsCategory | "tous";
 
 const PAGE_SIZE = 9;
 
-const filters: { value: Filter; label: string }[] = [
-  { value: "tous", label: "Tous" },
-  ...(Object.entries(newsCategories) as [NewsCategory, string][]).map(([value, label]) => ({
-    value,
-    label,
-  })),
-];
+const filters: Filter[] = ["tous", ...newsCategories];
 
 function isCategory(value: string | null): value is NewsCategory {
-  return value !== null && value in newsCategories;
+  return newsCategories.includes(value as NewsCategory);
 }
 
 // Filtres et grille des publications. La catégorie vit dans l'URL (?categorie=…) :
 // les tuiles Explorer de l'accueil y mènent directement, et le lien reste partageable.
 export function NewsList() {
+  const t = useTranslations("news");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -81,7 +77,7 @@ export function NewsList() {
       className="container-site scroll-mt-24 py-12 md:py-16"
     >
       <h2 id="publications-titre" className="sr-only">
-        Toutes les publications
+        {t("listTitle")}
       </h2>
 
       <ToggleGroup
@@ -89,16 +85,16 @@ export function NewsList() {
         spacing={2}
         value={filter}
         onValueChange={selectFilter}
-        aria-label="Filtrer les publications par catégorie"
+        aria-label={t("filterLabel")}
         className="flex-wrap"
       >
         {filters.map((f) => (
           <ToggleGroupItem
-            key={f.value}
-            value={f.value}
+            key={f}
+            value={f}
             className="h-10 rounded-full border bg-card px-4 font-semibold text-foreground hover:bg-accent hover:text-foreground data-[state=on]:border-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
           >
-            {f.label}
+            {f === "tous" ? t("allFilter") : t(`categories.${f}`)}
           </ToggleGroupItem>
         ))}
       </ToggleGroup>
@@ -119,10 +115,10 @@ export function NewsList() {
                 <Newspaper />
               </EmptyMedia>
               <EmptyTitle className="font-heading text-lg font-bold">
-                Aucune publication dans cette catégorie
+                {t("emptyTitle")}
               </EmptyTitle>
               <EmptyDescription>
-                Revenez bientôt ou consultez toutes nos publications.
+                {t("emptyText")}
               </EmptyDescription>
             </EmptyHeader>
           </Empty>

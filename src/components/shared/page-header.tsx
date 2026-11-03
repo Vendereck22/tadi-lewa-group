@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -23,6 +24,8 @@ type Props = {
 // Bandeau bg-muted en haut des pages intérieures : fil d'Ariane, H1, sous-titre, photo.
 // Sans image, le contenu est centré (page Actualités).
 export function PageHeader({ crumb, title, description, image, children }: Props) {
+  const t = useTranslations("common");
+
   return (
     <section className="border-b bg-muted">
       <div
@@ -36,7 +39,7 @@ export function PageHeader({ crumb, title, description, image, children }: Props
             <BreadcrumbList className={cn("gap-1.5 sm:gap-1.5", !image && "justify-center")}>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/">Accueil</Link>
+                  <Link href="/">{t("home")}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator>/</BreadcrumbSeparator>

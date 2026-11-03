@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+// Traductions FR/EN : lit la configuration de src/i18n/request.ts
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -14,7 +18,10 @@ const nextConfig: NextConfig = {
   },
   // L'équipe est présentée dans la page À propos
   async redirects() {
-    return [{ source: "/equipe", destination: "/a-propos#equipe", permanent: true }];
+    return [
+      { source: "/equipe", destination: "/a-propos#equipe", permanent: true },
+      { source: "/en/equipe", destination: "/en/a-propos#equipe", permanent: true },
+    ];
   },
   turbopack: {
     rules: {
@@ -26,4 +33,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

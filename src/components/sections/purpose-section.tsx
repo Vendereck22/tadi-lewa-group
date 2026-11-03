@@ -1,41 +1,31 @@
 import { Eye, Globe, Target } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { IconCircle } from "@/components/shared/icon-circle";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const items = [
-  {
-    icon: Target,
-    title: "Notre mission",
-    text: "Accompagner les entrepreneurs et les entreprises de la RDC par le conseil, la formation et l'appui, afin de transformer les idées en projets viables et durables.",
-  },
-  {
-    icon: Eye,
-    title: "Notre vision",
-    text: "Être un partenaire de confiance pour le développement durable, et un acteur de référence de l'écosystème entrepreneurial congolais.",
-    highlighted: true,
-  },
-  {
-    icon: Globe,
-    title: "Notre ambition",
-    text: "Contribuer à un Congo prospère en multipliant les entreprises solides, créatrices d'emplois et de valeur pour leurs communautés.",
-  },
+  { key: "mission", icon: Target },
+  { key: "vision", icon: Eye, highlighted: true },
+  { key: "ambition", icon: Globe },
 ];
 
 export function PurposeSection() {
+  const t = useTranslations("about.purpose");
+
   return (
     <section className="border-y bg-muted py-16 md:py-24">
       <div className="container-site">
         <SectionHeader
-          eyebrow="Notre raison d'être"
-          title="Mission, vision et ambition"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
           align="center"
         />
 
         <ul className="mt-10 grid gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
-          {items.map(({ icon, title, text, highlighted }) => (
-            <li key={title}>
+          {items.map(({ key, icon, highlighted }) => (
+            <li key={key}>
               {/* La carte du milieu (vision) est mise en avant en bleu marine */}
               <Card
                 className={cn(
@@ -48,14 +38,14 @@ export function PurposeSection() {
                   size="lg"
                   className={cn(highlighted && "bg-white text-primary")}
                 />
-                <h3 className="mt-6 text-xl font-bold">{title}</h3>
+                <h3 className="mt-6 text-xl font-bold">{t(`${key}.title`)}</h3>
                 <p
                   className={cn(
                     "mt-3",
                     highlighted ? "text-primary-foreground/85" : "text-muted-foreground",
                   )}
                 >
-                  {text}
+                  {t(`${key}.text`)}
                 </p>
               </Card>
             </li>

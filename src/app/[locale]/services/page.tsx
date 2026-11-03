@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { use } from "react";
 import { FaqSection } from "@/components/sections/faq-section";
 import { MethodSection } from "@/components/sections/method-section";
 import { ServiceDetails } from "@/components/sections/service-details";
@@ -8,44 +11,46 @@ import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { photos } from "@/lib/data/images";
 
-export const metadata: Metadata = {
-  title: "Nos services",
-  description:
-    "Conseil, formation, solutions pour entreprises et partenariats : un accompagnement complet, de l'idée jusqu'à la croissance.",
-};
+export async function generateMetadata({ params }: PageProps<"/[locale]/services">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "servicesPage.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
 // Ancres vers les sections de la page
-const anchors = [
-  { href: "#entrepreneurs", label: "Entrepreneurs" },
-  { href: "#entreprises", label: "Entreprises" },
-  { href: "#partenariats", label: "Partenariats" },
-  { href: "#formation", label: "Formation" },
-];
+const anchors = ["entrepreneurs", "entreprises", "partenariats", "formation"];
 
-export default function ServicesPage() {
+export default function ServicesPage({ params }: PageProps<"/[locale]/services">) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+  const t = useTranslations("servicesPage");
+  const tCta = useTranslations("cta.services");
+  const ti = useTranslations("images");
+
   return (
     <main>
       <PageHeader
-        crumb="Services"
+        crumb={t("header.crumb")}
         title={
           <>
-            Des services pour <span className="text-brand">faire grandir vos projets</span>
+            {t("header.titleStart")}{" "}
+            <span className="text-brand">{t("header.titleHighlight")}</span>
           </>
         }
-        description="Conseil, formation, solutions pour entreprises et partenariats : un accompagnement complet, de l'idée jusqu'à la croissance."
-        image={photos.servicesHeader}
+        description={t("header.description")}
+        image={{ src: photos.servicesHeader.src, alt: ti("servicesHeader") }}
       >
-        <nav aria-label="Accès rapide aux services" className="mt-7">
+        <nav aria-label={t("anchorsLabel")} className="mt-7">
           <ul className="flex flex-wrap gap-2.5">
             {anchors.map((anchor) => (
-              <li key={anchor.href}>
+              <li key={anchor}>
                 <Button
                   asChild
                   variant="outline"
                   size="sm"
                   className="h-10 bg-card px-4 font-semibold shadow-none"
                 >
-                  <a href={anchor.href}>{anchor.label}</a>
+                  <a href={`#${anchor}`}>{t(`anchors.${anchor}`)}</a>
                 </Button>
               </li>
             ))}
@@ -56,10 +61,7 @@ export default function ServicesPage() {
       <MethodSection />
       <TrainingTopics />
       <FaqSection />
-      <CtaBand
-        title={"Quel service vous correspond ?"}
-        description="Un premier échange permet de définir ensemble l'accompagnement adapté à votre projet."
-      />
+      <CtaBand title={tCta("title")} description={tCta("description")} />
     </main>
   );
 }

@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,8 @@ import { newsletterSchema, type NewsletterValues } from "@/lib/schemas/contact";
 
 // Bloc « Ne manquez aucune actualité » : abonnement par email
 export function NewsletterSection() {
+  const t = useTranslations("newsletter");
+  const tf = useTranslations("form.errors");
   const form = useForm<NewsletterValues>({
     resolver: zodResolver(newsletterSchema),
     defaultValues: { email: "" },
@@ -21,12 +24,10 @@ export function NewsletterSection() {
   async function onSubmit(values: NewsletterValues) {
     const result = await subscribeNewsletter(values);
     if (result.ok) {
-      toast.success("Merci, vous êtes bien inscrit(e)", {
-        description: "Vous recevrez nos prochaines annonces par email.",
-      });
+      toast.success(t("success"), { description: t("successText") });
       form.reset();
     } else {
-      toast.error(result.error);
+      toast.error(tf(result.error));
     }
   }
 
@@ -34,11 +35,8 @@ export function NewsletterSection() {
     <section className="container-site pb-16 md:pb-24">
       <div className="flex flex-col gap-8 rounded-[28px] border bg-muted px-6 py-10 md:px-12 md:py-12 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-xl">
-          <h2 className="text-2xl font-extrabold md:text-3xl">Ne manquez aucune actualité</h2>
-          <p className="mt-3 text-muted-foreground">
-            Recevez nos annonces d&apos;événements, de formations et d&apos;opportunités directement
-            par email.
-          </p>
+          <h2 className="text-2xl font-extrabold md:text-3xl">{t("title")}</h2>
+          <p className="mt-3 text-muted-foreground">{t("text")}</p>
         </div>
 
         <form
@@ -48,7 +46,7 @@ export function NewsletterSection() {
         >
           <Field data-invalid={!!error} className="gap-2">
             <FieldLabel htmlFor="newsletter-email" className="sr-only">
-              Adresse email
+              {t("label")}
             </FieldLabel>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Input
@@ -56,7 +54,7 @@ export function NewsletterSection() {
                 id="newsletter-email"
                 type="email"
                 autoComplete="email"
-                placeholder="Votre adresse email"
+                placeholder={t("placeholder")}
                 aria-invalid={!!error}
                 className="h-12 flex-1 rounded-full bg-background px-5 text-base text-foreground md:text-[15px]"
               />
@@ -67,10 +65,12 @@ export function NewsletterSection() {
                 className="font-semibold"
               >
                 {form.formState.isSubmitting && <Loader2 className="animate-spin" />}
-                S&apos;abonner
+                {t("submit")}
               </Button>
             </div>
-            {error && <FieldError errors={[error]} className="pl-5" />}
+            {error?.message && (
+              <FieldError errors={[{ message: tf(error.message) }]} className="pl-5" />
+            )}
           </Field>
         </form>
       </div>

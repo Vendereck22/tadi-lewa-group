@@ -8,12 +8,13 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// Libellés traduits dans messages/*.json (clé « nav.<key> »)
 export const navLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/a-propos", label: "À propos" },
-  { href: "/services", label: "Services" },
-  { href: "/actualites", label: "Actualités" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", key: "home" },
+  { href: "/a-propos", key: "about" },
+  { href: "/services", key: "services" },
+  { href: "/actualites", key: "news" },
+  { href: "/contact", key: "contact" },
 ] as const;
 
 // Les boutons « Prendre rendez-vous » mènent directement au formulaire de la page Contact
@@ -21,24 +22,20 @@ export const appointmentHref = "/contact#rendez-vous";
 
 // Raccourcis « Explorer » : tuiles de l'accueil et menu déroulant de la navbar
 // (les catégories ?categorie=… sont lues par les filtres de la page Actualités)
-export const exploreLinks: { href: string; label: string; icon: LucideIcon }[] = [
-  { href: "/actualites", label: "Actualité", icon: Newspaper },
-  { href: "/actualites?categorie=evenement", label: "Événements", icon: Calendar },
-  { href: "/services#formation", label: "Formation", icon: GraduationCap },
-  { href: "/actualites?categorie=projet-a-venir", label: "Projets à venir", icon: Rocket },
-  { href: "/actualites?categorie=archives", label: "Archives", icon: Folder },
-  { href: "/services#partenariats", label: "Partenariats", icon: Users },
+// (libellés traduits : clé « explore.items.<key> »)
+export const exploreLinks: { href: string; key: string; icon: LucideIcon }[] = [
+  { href: "/actualites", key: "news", icon: Newspaper },
+  { href: "/actualites?categorie=evenement", key: "events", icon: Calendar },
+  { href: "/services#formation", key: "training", icon: GraduationCap },
+  { href: "/actualites?categorie=projet-a-venir", key: "upcoming", icon: Rocket },
+  { href: "/actualites?categorie=archives", key: "archives", icon: Folder },
+  { href: "/services#partenariats", key: "partnerships", icon: Users },
 ];
 
+// Adresse et horaires (textes traduits) : clé « contactInfo » de messages/*.json
 export const contactInfo = {
-  addressLines: ["43 Bis, Avenue Colonel Mpia", "Joli-Parc, C/Ngaliema – Kinshasa"],
   email: "tadilewagabriel@gmail.com",
   phones: ["+243 89 026 7003", "+243 968 602 293"],
-  hours: "Du lundi au samedi, 07h00 – 18h00",
-  hoursLines: ["Lundi – samedi : 07h00 – 18h00", "Dimanche : fermé"],
-  // Versions courtes pour la barre d'infos du haut
-  shortAddress: "43 Bis, Av. Colonel Mpia, Joli-Parc, Ngaliema – Kinshasa",
-  shortHours: "Lun – Sam : 07h00 – 18h00",
 };
 
 const mapsQuery = encodeURIComponent(

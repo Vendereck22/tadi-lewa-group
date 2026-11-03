@@ -7,12 +7,13 @@ import {
   type QuickContactValues,
 } from "@/lib/schemas/contact";
 
-export type ActionResult = { ok: true } | { ok: false; error: string };
+// error : clé de traduction (« form.errors.<clé> »)
+export type ActionResult = { ok: true } | { ok: false; error: "invalid" | "emailInvalid" };
 
 export async function sendQuickContact(values: QuickContactValues): Promise<ActionResult> {
   const parsed = quickContactSchema.safeParse(values);
   if (!parsed.success) {
-    return { ok: false, error: "Certains champs sont invalides." };
+    return { ok: false, error: "invalid" };
   }
 
   // TODO : brancher l'envoi réel (email via Resend, WhatsApp…). Pour l'instant le message
@@ -25,7 +26,7 @@ export async function sendQuickContact(values: QuickContactValues): Promise<Acti
 export async function sendAppointment(values: ContactValues): Promise<ActionResult> {
   const parsed = contactSchema.safeParse(values);
   if (!parsed.success) {
-    return { ok: false, error: "Certains champs sont invalides." };
+    return { ok: false, error: "invalid" };
   }
 
   // TODO : même branchement que sendQuickContact (email, WhatsApp…).

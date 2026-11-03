@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Send } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { use } from "react";
 import { AboutIntro } from "@/components/sections/about-intro";
 import { FounderMessage } from "@/components/sections/founder-message";
 import { HistorySection } from "@/components/sections/history-section";
@@ -12,48 +15,51 @@ import { PageHeader } from "@/components/shared/page-header";
 import { photos } from "@/lib/data/images";
 import { contactInfo } from "@/lib/data/site";
 
-export const metadata: Metadata = {
-  title: "À propos",
-  description:
-    "Découvrez qui nous sommes, ce qui nous anime et l'équipe qui porte chaque jour la vision de TADI LEWA GROUP SARLU.",
-};
+export async function generateMetadata({ params }: PageProps<"/[locale]/a-propos">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
-export default function AProposPage() {
+export default function AProposPage({ params }: PageProps<"/[locale]/a-propos">) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+  const t = useTranslations("about.header");
+  const tCta = useTranslations("cta");
+  const tc = useTranslations("common");
+  const ti = useTranslations("images");
+
   return (
     <main>
       <PageHeader
-        crumb="À propos"
+        crumb={t("crumb")}
         title={
           <>
-            Bâtir ensemble un avenir{" "}
-            <span className="text-brand">entrepreneurial et prospère</span>
+            {t("titleStart")} <span className="text-brand">{t("titleHighlight")}</span>
           </>
         }
-        description="Découvrez qui nous sommes, ce qui nous anime et l'équipe qui porte chaque jour la vision de TADI LEWA GROUP SARLU."
-        image={photos.aboutHeader}
+        description={t("description")}
+        image={{ src: photos.aboutHeader.src, alt: ti("aboutHeader") }}
       />
       <AboutIntro />
       <PurposeSection />
       <ValuesCards />
-      {/* L'équipe (ancienne page /equipe) : lien « Équipe » de la navbar → /a-propos#equipe */}
+      {/* L'équipe (ancienne page /equipe) : lien « Rencontrer l'équipe » → /a-propos#equipe */}
       <div id="equipe" className="scroll-mt-20 border-t">
         <FounderMessage />
         <MembersSection />
         <TeamInAction />
         <CtaBand
-          title={"Envie de rejoindre l'équipe ?"}
-          description="Stages, bénévolat ou collaborations : envoyez-nous votre candidature et parlez-nous de votre motivation."
-          ctaLabel="Envoyer ma candidature"
-          ctaHref={`mailto:${contactInfo.email}?subject=${encodeURIComponent("Candidature – TADI LEWA GROUP")}`}
+          title={tCta("join.title")}
+          description={tCta("join.description")}
+          ctaLabel={tCta("join.cta")}
+          ctaHref={`mailto:${contactInfo.email}?subject=${encodeURIComponent(tCta("join.subject"))}`}
           ctaIcon={Send}
-          secondary={{ label: "Nous contacter", href: "/contact" }}
+          secondary={{ label: tc("contactUs"), href: "/contact" }}
         />
       </div>
       <HistorySection />
-      <CtaBand
-        title="Rejoignez l'aventure TADI LEWA"
-        description="Entrepreneur, entreprise ou partenaire : construisons ensemble les réussites de demain."
-      />
+      <CtaBand title={tCta("about.title")} description={tCta("about.description")} />
     </main>
   );
 }

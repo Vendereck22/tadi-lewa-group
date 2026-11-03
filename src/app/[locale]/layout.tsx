@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { TopBar } from "@/components/layout/top-bar";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import "./globals.css";
+import { routing } from "@/i18n/routing";
+import "../globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,26 +26,41 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "TADI LEWA GROUP SARLU",
-    template: "%s | TADI LEWA GROUP",
-  },
-  description:
-    "TADI LEWA GROUP SARLU : accompagnement des entrepreneurs, solutions pour les entreprises, partenariats et formation à Kinshasa.",
-};
+// Pages générées à l'avance pour chaque langue
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+
+  return {
+    title: { default: t("title"), template: t("template") },
+    description: t("description"),
+  };
+}
+
+export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
+
   return (
-    <html lang="fr" className={`${inter.variable} ${montserrat.variable}`}>
+    // suppressHydrationWarning : next-themes ajoute la classe « dark » avant l'hydratation
+    <html lang={locale} className={`${inter.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body>
-        <TooltipProvider>
-          <TopBar />
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-        </TooltipProvider>
-        <Toaster position="top-center" richColors />
+        <NextIntlClientProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <TooltipProvider>
+              <TopBar />
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </TooltipProvider>
+            <Toaster position="top-center" richColors />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

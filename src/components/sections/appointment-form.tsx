@@ -2,9 +2,10 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CalendarDays, Loader2 } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import { fr } from "react-day-picker/locale";
-import { Controller, useForm } from "react-hook-form";
+import { enUS, fr } from "react-day-picker/locale";
+import { Controller, useForm, type FieldError as FormError } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -43,32 +44,38 @@ const defaultValues: ContactValues = {
   telephone: "",
   email: "",
   date: undefined,
-  objet: "Accompagnement entrepreneur",
+  objet: "accompagnement",
   message: "",
 };
-
-const dateFormatter = new Intl.DateTimeFormat("fr-FR", { dateStyle: "full" });
 
 // Texte toujours en bleu marine : seuls la bordure, le libellé et le message passent en rouge
 const inputClass = "h-12 rounded-md bg-background px-4 text-base text-foreground md:text-[15px]";
 
 // Formulaire de rendez-vous de la page Contact, validé par zod
 export function AppointmentForm() {
+  const t = useTranslations("form");
+  const tc = useTranslations("common");
+  const tp = useTranslations("contactPage");
+  const locale = useLocale();
+  const dateFormatter = new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "fr-FR", {
+    dateStyle: "full",
+  });
   const [calendarOpen, setCalendarOpen] = useState(false);
   const form = useForm<ContactValues>({
     resolver: zodResolver(contactSchema),
     defaultValues,
   });
 
+  const errors = (error?: FormError) =>
+    error?.message ? [{ message: t(`errors.${error.message}`) }] : undefined;
+
   async function onSubmit(values: ContactValues) {
     const result = await sendAppointment(values);
     if (result.ok) {
-      toast.success("Merci, votre demande est envoyée", {
-        description: "Notre équipe vous recontacte pour confirmer le rendez-vous.",
-      });
+      toast.success(t("requestSent"), { description: t("requestSentText") });
       form.reset(defaultValues);
     } else {
-      toast.error(result.error);
+      toast.error(t(`errors.${result.error}`));
     }
   }
 
@@ -77,10 +84,8 @@ export function AppointmentForm() {
       id="rendez-vous"
       className="scroll-mt-28 gap-0 rounded-3xl p-6 shadow-[0_14px_40px_rgba(10,42,102,0.08)] md:p-10"
     >
-      <h2 className="text-2xl font-bold md:text-3xl">Prendre rendez-vous</h2>
-      <p className="mt-2 text-muted-foreground">
-        Remplissez ce formulaire, nous vous répondons au plus vite.
-      </p>
+      <h2 className="text-2xl font-bold md:text-3xl">{tp("formTitle")}</h2>
+      <p className="mt-2 text-muted-foreground">{tp("formIntro")}</p>
 
       <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="mt-7">
         <FieldGroup className="gap-5">
@@ -90,7 +95,7 @@ export function AppointmentForm() {
             render={({ field }) => (
               <FieldSet className="gap-3">
                 <FieldLegend variant="label" className="mb-0 font-semibold">
-                  Vous êtes
+                  {t("profile")}
                 </FieldLegend>
                 <RadioGroup
                   name={field.name}
@@ -98,7 +103,7 @@ export function AppointmentForm() {
                   onValueChange={field.onChange}
                   className="flex flex-wrap gap-2.5"
                 >
-                  {Object.entries(contactProfiles).map(([value, label]) => (
+                  {contactProfiles.map((value) => (
                     <FieldLabel
                       key={value}
                       htmlFor={`profil-${value}`}
@@ -108,7 +113,7 @@ export function AppointmentForm() {
                       )}
                     >
                       <RadioGroupItem id={`profil-${value}`} value={value} />
-                      {label}
+                      {t(`profiles.${value}`)}
                     </FieldLabel>
                   ))}
                 </RadioGroup>
@@ -123,17 +128,17 @@ export function AppointmentForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="gap-2">
                   <FieldLabel htmlFor="rdv-nom" className="font-semibold">
-                    Nom complet
+                    {t("name")}
                   </FieldLabel>
                   <Input
                     {...field}
                     id="rdv-nom"
                     autoComplete="name"
-                    placeholder="Votre nom"
+                    placeholder={t("namePlaceholder")}
                     aria-invalid={fieldState.invalid}
                     className={inputClass}
                   />
-                  {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                  {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
                 </Field>
               )}
             />
@@ -143,7 +148,7 @@ export function AppointmentForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="gap-2">
                   <FieldLabel htmlFor="rdv-telephone" className="font-semibold">
-                    Téléphone
+                    {t("phone")}
                   </FieldLabel>
                   <Input
                     {...field}
@@ -154,7 +159,7 @@ export function AppointmentForm() {
                     aria-invalid={fieldState.invalid}
                     className={inputClass}
                   />
-                  {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                  {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
                 </Field>
               )}
             />
@@ -164,18 +169,18 @@ export function AppointmentForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="gap-2">
                   <FieldLabel htmlFor="rdv-email" className="font-semibold">
-                    Email
+                    {t("email")}
                   </FieldLabel>
                   <Input
                     {...field}
                     id="rdv-email"
                     type="email"
                     autoComplete="email"
-                    placeholder="vous@exemple.com"
+                    placeholder={t("emailPlaceholder")}
                     aria-invalid={fieldState.invalid}
                     className={inputClass}
                   />
-                  {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                  {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
                 </Field>
               )}
             />
@@ -185,7 +190,7 @@ export function AppointmentForm() {
               render={({ field }) => (
                 <Field className="gap-2">
                   <FieldLabel htmlFor="rdv-date" className="font-semibold">
-                    Date souhaitée
+                    {t("date")}
                   </FieldLabel>
                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
@@ -200,7 +205,7 @@ export function AppointmentForm() {
                         )}
                       >
                         <span className="truncate">
-                          {field.value ? dateFormatter.format(field.value) : "Choisir une date"}
+                          {field.value ? dateFormatter.format(field.value) : t("datePlaceholder")}
                         </span>
                         <CalendarDays aria-hidden="true" className="text-muted-foreground" />
                       </Button>
@@ -209,7 +214,7 @@ export function AppointmentForm() {
                       {/* Pas de date passée, ni le dimanche (fermé) */}
                       <Calendar
                         mode="single"
-                        locale={fr}
+                        locale={locale === "en" ? enUS : fr}
                         selected={field.value}
                         onSelect={(date) => {
                           field.onChange(date);
@@ -231,7 +236,7 @@ export function AppointmentForm() {
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid} className="gap-2">
                 <FieldLabel htmlFor="rdv-objet" className="font-semibold">
-                  Objet
+                  {t("subject")}
                 </FieldLabel>
                 <Select name={field.name} value={field.value} onValueChange={field.onChange}>
                   <SelectTrigger
@@ -239,17 +244,17 @@ export function AppointmentForm() {
                     aria-invalid={fieldState.invalid}
                     className={`w-full data-[size=default]:h-12 ${inputClass}`}
                   >
-                    <SelectValue placeholder="Choisissez un objet" />
+                    <SelectValue placeholder={t("subjectPlaceholder")} />
                   </SelectTrigger>
                   <SelectContent>
                     {contactSubjects.map((subject) => (
                       <SelectItem key={subject} value={subject}>
-                        {subject}
+                        {t(`subjects.${subject}`)}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
               </Field>
             )}
           />
@@ -260,16 +265,16 @@ export function AppointmentForm() {
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid} className="gap-2">
                 <FieldLabel htmlFor="rdv-message" className="font-semibold">
-                  Message
+                  {t("message")}
                 </FieldLabel>
                 <Textarea
                   {...field}
                   id="rdv-message"
-                  placeholder="Parlez-nous de votre projet..."
+                  placeholder={t("messagePlaceholder")}
                   aria-invalid={fieldState.invalid}
                   className="min-h-32 rounded-md bg-background px-4 py-3 text-base text-foreground md:text-[15px]"
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
               </Field>
             )}
           />
@@ -284,11 +289,11 @@ export function AppointmentForm() {
           {form.formState.isSubmitting ? (
             <>
               <Loader2 className="animate-spin" />
-              Envoi en cours…
+              {tc("sending")}
             </>
           ) : (
             <>
-              Envoyer ma demande
+              {t("sendRequest")}
               <ArrowRight />
             </>
           )}

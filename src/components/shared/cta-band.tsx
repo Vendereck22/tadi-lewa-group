@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { CalendarCheck, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { appointmentHref } from "@/lib/data/site";
 
 type Action = { label: string; href: string };
@@ -25,11 +26,13 @@ function ActionLink({ href, ...props }: React.ComponentProps<"a"> & { href: stri
 export function CtaBand({
   title,
   description,
-  ctaLabel = "Prendre rendez-vous",
+  ctaLabel,
   ctaHref = appointmentHref,
   ctaIcon: CtaIcon = CalendarCheck,
   secondary,
 }: Props) {
+  const t = useTranslations("common");
+
   return (
     <section className="container-site pb-16 md:pb-24">
       <div className="flex flex-col items-start gap-8 rounded-[30px] bg-primary px-7 py-10 text-primary-foreground md:flex-row md:items-center md:justify-between md:px-14 md:py-14">
@@ -41,7 +44,7 @@ export function CtaBand({
           <Button asChild variant="inverse" size="xl" className="font-semibold">
             <ActionLink href={ctaHref}>
               <CtaIcon />
-              {ctaLabel}
+              {ctaLabel ?? t("appointment")}
             </ActionLink>
           </Button>
           {secondary && (

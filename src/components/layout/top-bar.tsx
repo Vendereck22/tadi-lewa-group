@@ -1,9 +1,11 @@
 import { Clock, MapPin, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { InlineLink } from "@/components/shared/inline-link";
 import { contactInfo, telHref } from "@/lib/data/site";
 
 // Barre d'infos bleu nuit au-dessus de l'en-tête (adresse, horaires, téléphone)
 export function TopBar() {
+  const t = useTranslations("contactInfo");
   const phone = contactInfo.phones[0];
 
   return (
@@ -12,11 +14,11 @@ export function TopBar() {
         <ul className="flex min-w-0 items-center gap-6">
           <li className="hidden min-w-0 items-center gap-2 md:flex">
             <MapPin aria-hidden="true" className="size-3.5 shrink-0" />
-            <span className="truncate">{contactInfo.shortAddress}</span>
+            <span className="truncate">{t("shortAddress")}</span>
           </li>
           <li className="flex items-center gap-2 whitespace-nowrap">
             <Clock aria-hidden="true" className="size-3.5 shrink-0" />
-            {contactInfo.shortHours}
+            {t("shortHours")}
           </li>
         </ul>
         <InlineLink

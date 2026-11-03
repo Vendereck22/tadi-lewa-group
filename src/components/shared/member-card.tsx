@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, UserRound } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { LinkedinIcon } from "@/components/shared/brand-icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -15,17 +16,20 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { teamPoles, type TeamMember } from "@/lib/data/team";
+import type { TeamMember } from "@/lib/data/team";
 import { cn } from "@/lib/utils";
 
 // Portrait du membre, ou silhouette tant que la photo n'est pas fournie
 function MemberAvatar({ member, className }: { member: TeamMember; className?: string }) {
+  const t = useTranslations("about.founder");
+  const name = useTranslations("team.members")(`${member.id}.name`);
+
   return (
     <Avatar className={cn("bg-accent", className)}>
       {member.photo && (
         <AvatarImage
           src={member.photo}
-          alt={`Portrait de ${member.name}`}
+          alt={t("portrait", { name })}
           className="object-cover object-top"
         />
       )}
@@ -37,6 +41,9 @@ function MemberAvatar({ member, className }: { member: TeamMember; className?: s
 }
 
 function MemberLinks({ member }: { member: TeamMember }) {
+  const t = useTranslations("about.members");
+  const tc = useTranslations("common");
+  const name = useTranslations("team.members")(`${member.id}.name`);
   const links = [
     { label: "LinkedIn", href: member.linkedin, icon: <LinkedinIcon />, external: true },
     { label: "Email", href: `mailto:${member.email}`, icon: <Mail />, external: false },
@@ -52,7 +59,7 @@ function MemberLinks({ member }: { member: TeamMember }) {
                 <a
                   href={link.href}
                   {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
-                  aria-label={`${link.label} de ${member.name}${link.external ? " (nouvel onglet)" : ""}`}
+                  aria-label={`${t("linkLabel", { network: link.label, name })}${link.external ? ` ${tc("newTab")}` : ""}`}
                 >
                   {link.icon}
                 </a>
@@ -68,7 +75,12 @@ function MemberLinks({ member }: { member: TeamMember }) {
 
 // Carte d'un membre : photo, pôle, nom, fonction, liens, fiche détaillée en Dialog
 export function MemberCard({ member }: { member: TeamMember }) {
-  const pole = teamPoles[member.pole];
+  const t = useTranslations("about.members");
+  const tm = useTranslations("team.members");
+  const pole = useTranslations("team.poles")(member.pole);
+  const name = tm(`${member.id}.name`);
+  const role = tm(`${member.id}.role`);
+  const bio = tm(`${member.id}.bio`);
 
   return (
     <Dialog>
@@ -79,15 +91,15 @@ export function MemberCard({ member }: { member: TeamMember }) {
           <Badge variant="secondary" className="rounded-full px-3 py-1 text-xs font-semibold">
             {pole}
           </Badge>
-          <h3 className="mt-3 text-lg font-bold">{member.name}</h3>
-          <p className="mt-1 text-sm font-semibold text-brand">{member.role}</p>
-          <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{member.bio}</p>
+          <h3 className="mt-3 text-lg font-bold">{name}</h3>
+          <p className="mt-1 text-sm font-semibold text-brand">{role}</p>
+          <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{bio}</p>
 
           <div className="mt-auto flex items-center justify-between gap-3 pt-5">
             <MemberLinks member={member} />
             <DialogTrigger asChild>
               <Button variant="link" className="h-auto p-0 font-semibold text-brand">
-                Voir le profil
+                {t("viewProfile")}
               </Button>
             </DialogTrigger>
           </div>
@@ -101,10 +113,10 @@ export function MemberCard({ member }: { member: TeamMember }) {
             <Badge variant="secondary" className="rounded-full px-3 py-1 text-xs font-semibold">
               {pole}
             </Badge>
-            <DialogTitle className="mt-1 font-heading text-xl font-bold">{member.name}</DialogTitle>
-            <DialogDescription className="font-semibold text-brand">{member.role}</DialogDescription>
+            <DialogTitle className="mt-1 font-heading text-xl font-bold">{name}</DialogTitle>
+            <DialogDescription className="font-semibold text-brand">{role}</DialogDescription>
           </DialogHeader>
-          <p className="mt-4 text-muted-foreground">{member.bio}</p>
+          <p className="mt-4 text-muted-foreground">{bio}</p>
           <div className="mt-6">
             <MemberLinks member={member} />
           </div>

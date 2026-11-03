@@ -44,6 +44,44 @@
   --sidebar-ring: oklch(0.563 0.175 255.7);
 }
 
+/* Mode nuit : fond bleu nuit (dans la teinte de la marque), textes clairs, bleu vif en accent.
+   Le bleu marine des boutons et pastilles devient bleu vif pour rester visible sur fond sombre. */
+.dark {
+  --background: oklch(0.17 0.04 262);            /* bleu nuit profond */
+  --foreground: oklch(0.96 0.01 260);
+  --card: oklch(0.21 0.05 262);
+  --card-foreground: oklch(0.96 0.01 260);
+  --popover: oklch(0.21 0.05 262);
+  --popover-foreground: oklch(0.96 0.01 260);
+  --primary: oklch(0.6 0.17 256);                /* bleu vif */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.27 0.06 262);
+  --secondary-foreground: oklch(0.92 0.03 260);
+  --muted: oklch(0.2 0.045 262);
+  --muted-foreground: oklch(0.76 0.03 262);
+  --accent: oklch(0.27 0.06 262);
+  --accent-foreground: oklch(0.96 0.01 260);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.66 0.16 256);
+  --brand: oklch(0.66 0.16 256);
+  --brand-foreground: oklch(0.15 0.04 262);
+  --brand-deep: oklch(0.13 0.035 262);           /* barre d'infos et pied de page */
+  --brand-deep-foreground: oklch(0.86 0.03 261);
+  --success: oklch(0.7 0.14 156);
+  --chart-3: oklch(0.74 0.12 253);
+  --chart-4: oklch(0.55 0.06 260);
+  --sidebar: oklch(0.2 0.045 262);
+  --sidebar-foreground: oklch(0.96 0.01 260);
+  --sidebar-primary: oklch(0.6 0.17 256);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.27 0.06 262);
+  --sidebar-accent-foreground: oklch(0.96 0.01 260);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.66 0.16 256);
+}
+
 @theme inline {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-montserrat);

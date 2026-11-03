@@ -1,29 +1,27 @@
 import { z } from "zod";
 
+// Valeurs stables envoyées par les formulaires ; libellés traduits : « form.subjects.<valeur> »
 export const contactSubjects = [
-  "Prendre rendez-vous",
-  "Accompagnement entrepreneur",
-  "Solution entreprise",
-  "Partenariat",
-  "Formation",
-  "Autre",
+  "rendez-vous",
+  "accompagnement",
+  "solution-entreprise",
+  "partenariat",
+  "formation",
+  "autre",
 ] as const;
 
-export const contactProfiles = {
-  entrepreneur: "Entrepreneur",
-  entreprise: "Entreprise",
-  partenaire: "Partenaire",
-  autre: "Autre",
-} as const;
+// Libellés traduits : « form.profiles.<valeur> »
+export const contactProfiles = ["entrepreneur", "entreprise", "partenaire", "autre"] as const;
 
+// Les messages d'erreur sont des clés de traduction (« form.errors.<clé> »)
 export const contactSchema = z.object({
-  profil: z.enum(["entrepreneur", "entreprise", "partenaire", "autre"]),
-  nom: z.string().trim().min(2, "Indiquez votre nom"),
-  telephone: z.string().trim().min(9, "Numéro trop court"),
-  email: z.email("Adresse email invalide"),
+  profil: z.enum(contactProfiles),
+  nom: z.string().trim().min(2, "nameRequired"),
+  telephone: z.string().trim().min(9, "phoneTooShort"),
+  email: z.email("emailInvalid"),
   date: z.date().optional(),
-  objet: z.string().min(1, "Choisissez un objet"),
-  message: z.string().trim().min(10, "Message trop court"),
+  objet: z.string().min(1, "subjectRequired"),
+  message: z.string().trim().min(10, "messageTooShort"),
 });
 
 export type ContactValues = z.infer<typeof contactSchema>;
@@ -40,7 +38,7 @@ export const quickContactSchema = contactSchema.pick({
 export type QuickContactValues = z.infer<typeof quickContactSchema>;
 
 export const newsletterSchema = z.object({
-  email: z.email("Adresse email invalide"),
+  email: z.email("emailInvalid"),
 });
 
 export type NewsletterValues = z.infer<typeof newsletterSchema>;

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -10,12 +11,13 @@ type Props = {
 
 // Logo provisoire (icône découpée dans la maquette) : à remplacer par le SVG officiel
 export function Logo({ variant = "default", className }: Props) {
+  const t = useTranslations("logo");
   const inverse = variant === "inverse";
 
   return (
     <Link
       href="/"
-      aria-label="TADI LEWA GROUP SARLU, retour à l'accueil"
+      aria-label={t("home")}
       className={cn("flex shrink-0 items-center gap-3", inverse && "text-white", className)}
     >
       {inverse ? (
@@ -24,14 +26,17 @@ export function Logo({ variant = "default", className }: Props) {
         </span>
       ) : (
         <>
-          <Image
-            src="/images/logo-mark.png"
-            alt=""
-            width={300}
-            height={217}
-            preload
-            className="h-10 w-auto md:h-11"
-          />
+          {/* Le PNG a un fond blanc : en mode nuit, il est posé sur une tuile blanche arrondie */}
+          <span className="flex items-center dark:rounded-lg dark:bg-white dark:p-1">
+            <Image
+              src="/images/logo-mark.png"
+              alt=""
+              width={300}
+              height={217}
+              preload
+              className="h-10 w-auto md:h-11 dark:h-9 dark:md:h-10"
+            />
+          </span>
           <span aria-hidden="true" className="h-9 w-0.5 rounded-full bg-primary" />
         </>
       )}

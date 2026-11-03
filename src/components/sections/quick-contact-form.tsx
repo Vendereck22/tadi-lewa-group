@@ -2,7 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Loader2 } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
+import { useTranslations } from "next-intl";
+import { Controller, useForm, type FieldError as FormError } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
@@ -26,7 +27,7 @@ const defaultValues: QuickContactValues = {
   nom: "",
   telephone: "",
   email: "",
-  objet: contactSubjects[0],
+  objet: "rendez-vous",
   message: "",
 };
 
@@ -35,6 +36,11 @@ const inputClass = "h-12 rounded-md bg-background px-4 text-base text-foreground
 
 // Formulaire court de l'accueil (nom, téléphone, email, objet, message)
 export function QuickContactForm() {
+  const t = useTranslations("form");
+  const tc = useTranslations("common");
+  // Les messages de zod sont des clés : on les traduit à l'affichage
+  const errors = (error?: FormError) =>
+    error?.message ? [{ message: t(`errors.${error.message}`) }] : undefined;
   const form = useForm<QuickContactValues>({
     resolver: zodResolver(quickContactSchema),
     defaultValues,
@@ -43,12 +49,10 @@ export function QuickContactForm() {
   async function onSubmit(values: QuickContactValues) {
     const result = await sendQuickContact(values);
     if (result.ok) {
-      toast.success("Merci, votre message est envoyé", {
-        description: "Notre équipe vous répond au plus vite.",
-      });
+      toast.success(t("messageSent"), { description: t("messageSentText") });
       form.reset(defaultValues);
     } else {
-      toast.error(result.error);
+      toast.error(t(`errors.${result.error}`));
     }
   }
 
@@ -62,17 +66,17 @@ export function QuickContactForm() {
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid} className="gap-2">
                 <FieldLabel htmlFor="quick-nom" className="font-semibold">
-                  Nom complet
+                  {t("name")}
                 </FieldLabel>
                 <Input
                   {...field}
                   id="quick-nom"
                   autoComplete="name"
-                  placeholder="Votre nom"
+                  placeholder={t("namePlaceholder")}
                   aria-invalid={fieldState.invalid}
                   className={inputClass}
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
               </Field>
             )}
           />
@@ -82,7 +86,7 @@ export function QuickContactForm() {
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid} className="gap-2">
                 <FieldLabel htmlFor="quick-telephone" className="font-semibold">
-                  Téléphone
+                  {t("phone")}
                 </FieldLabel>
                 <Input
                   {...field}
@@ -93,7 +97,7 @@ export function QuickContactForm() {
                   aria-invalid={fieldState.invalid}
                   className={inputClass}
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
               </Field>
             )}
           />
@@ -105,18 +109,18 @@ export function QuickContactForm() {
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid} className="gap-2">
               <FieldLabel htmlFor="quick-email" className="font-semibold">
-                Email
+                {t("email")}
               </FieldLabel>
               <Input
                 {...field}
                 id="quick-email"
                 type="email"
                 autoComplete="email"
-                placeholder="vous@exemple.com"
+                placeholder={t("emailPlaceholder")}
                 aria-invalid={fieldState.invalid}
                 className={inputClass}
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
             </Field>
           )}
         />
@@ -127,7 +131,7 @@ export function QuickContactForm() {
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid} className="gap-2">
               <FieldLabel htmlFor="quick-objet" className="font-semibold">
-                Objet
+                {t("subject")}
               </FieldLabel>
               <Select name={field.name} value={field.value} onValueChange={field.onChange}>
                 <SelectTrigger
@@ -135,17 +139,17 @@ export function QuickContactForm() {
                   aria-invalid={fieldState.invalid}
                   className={`w-full data-[size=default]:h-12 ${inputClass}`}
                 >
-                  <SelectValue placeholder="Choisissez un objet" />
+                  <SelectValue placeholder={t("subjectPlaceholder")} />
                 </SelectTrigger>
                 <SelectContent>
                   {contactSubjects.map((subject) => (
                     <SelectItem key={subject} value={subject}>
-                      {subject}
+                      {t(`subjects.${subject}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
             </Field>
           )}
         />
@@ -156,16 +160,16 @@ export function QuickContactForm() {
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid} className="gap-2">
               <FieldLabel htmlFor="quick-message" className="font-semibold">
-                Message
+                {t("message")}
               </FieldLabel>
               <Textarea
                 {...field}
                 id="quick-message"
-                placeholder="Parlez-nous de votre projet..."
+                placeholder={t("messagePlaceholder")}
                 aria-invalid={fieldState.invalid}
                 className="min-h-32 rounded-md bg-background px-4 py-3 text-base text-foreground md:text-[15px]"
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError errors={errors(fieldState.error)} />}
             </Field>
           )}
         />
@@ -180,11 +184,11 @@ export function QuickContactForm() {
         {form.formState.isSubmitting ? (
           <>
             <Loader2 className="animate-spin" />
-            Envoi en cours…
+            {tc("sending")}
           </>
         ) : (
           <>
-            Envoyer le message
+            {t("send")}
             <ArrowRight />
           </>
         )}

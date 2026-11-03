@@ -1,11 +1,13 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { FeaturedNewsCard, NewsCard } from "@/components/shared/news-card";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { news } from "@/lib/data/news";
 
 export function NewsSection() {
+  const t = useTranslations("newsSection");
   const featured = news.find((item) => item.featured);
   const latest = news.filter((item) => !item.featured).slice(0, 4);
 
@@ -13,8 +15,8 @@ export function NewsSection() {
     <section className="container-site pb-16 md:pt-4 md:pb-24">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeader
-          eyebrow="Actualités & Publications"
-          title="Restez informés de nos activités"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
           className="max-w-3xl"
         />
         <Button
@@ -24,7 +26,7 @@ export function NewsSection() {
           className="self-start border-[1.5px] border-primary bg-transparent px-6 font-semibold text-primary shadow-none sm:self-auto"
         >
           <Link href="/actualites">
-            Toutes les publications
+            {t("all")}
             <ArrowRight />
           </Link>
         </Button>
