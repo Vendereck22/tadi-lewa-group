@@ -2,9 +2,11 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { ContactSection } from "@/components/sections/contact-section";
+import { EntrepreneursGallery } from "@/components/sections/entrepreneurs-gallery";
 import { ExploreGrid } from "@/components/sections/explore-grid";
 import { Hero } from "@/components/sections/hero";
 import { NewsSection } from "@/components/sections/news-section";
+import { RealisationsGallery } from "@/components/sections/realisations-gallery";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { TeamPreview } from "@/components/sections/team-preview";
 import { ValuesStrip } from "@/components/sections/values-strip";
@@ -23,7 +25,9 @@ export default function Home({ params }: PageProps<"/[locale]">) {
       <ServicesGrid />
       <VisionSection />
       <ExploreGrid />
+      <EntrepreneursGallery />
       <TeamPreview />
+      <RealisationsGallery />
       <NewsSection />
       <CtaBand
         title={

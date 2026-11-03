@@ -148,6 +148,183 @@
     "text": "A dynamic and committed team taking the vision of TADI LEWA GROUP SARLU further: management, programmes, events and communication, working for entrepreneurs.",
     "cta": "Meet the team"
   },
+  "realisations": {
+    "eyebrow": "Our activities",
+    "title": "Our achievements",
+    "description": "Entrepreneurship fairs, expert panels, workshops and award ceremonies: a look back at the activities we have run alongside Congolese entrepreneurs.",
+    "galleryLabel": "Gallery of our achievements",
+    "slideLabel": "Photo {number} of {total}",
+    "goTo": "Go to photo {number}",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "items": {
+      "awards": {
+        "category": "Awards",
+        "title": "Entrepreneurs rewarded",
+        "alt": "A trophy handed to a winner on the Made in Congo fair stage"
+      },
+      "panels": {
+        "category": "Conferences",
+        "title": "Expert panels",
+        "alt": "A panellist speaks during an on-stage discussion"
+      },
+      "fair": {
+        "category": "Made in Congo fair",
+        "title": "Stands to get noticed",
+        "alt": "Two exhibitors in front of their stand of wax hats and accessories"
+      },
+      "workshops": {
+        "category": "Training",
+        "title": "Preparation workshops",
+        "alt": "Entrepreneurs gathered around a large table for a workshop"
+      },
+      "culture": {
+        "category": "Entertainment",
+        "title": "Celebrating Congolese culture",
+        "alt": "Dancers in traditional dress accompanied by a drummer"
+      },
+      "audience": {
+        "category": "Event",
+        "title": "A packed audience",
+        "alt": "A full room follows the talks at the fair"
+      },
+      "innovation": {
+        "category": "Innovation",
+        "title": "Tech and virtual reality",
+        "alt": "Outdoor video game and virtual reality demo stand"
+      },
+      "localProducts": {
+        "category": "Local products",
+        "title": "Local know-how",
+        "alt": "An exhibitor presents her homemade juices at her stand"
+      },
+      "health": {
+        "category": "Health",
+        "title": "Free on-site screening",
+        "alt": "Health workers carry out a screening for a visitor"
+      },
+      "networking": {
+        "category": "Networking",
+        "title": "Meetings that matter",
+        "alt": "Participants in conversation during a networking break"
+      },
+      "winners": {
+        "category": "Awards",
+        "title": "Our winners",
+        "alt": "Winners posing with their trophies on stage"
+      }
+    }
+  },
+  "viewer": {
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "close": "Close the viewer"
+  },
+  "panelists": {
+    "eyebrow": "They answered the call",
+    "title": "Our panellists and speakers",
+    "description": "Experts, business leaders and ecosystem players: thank you to everyone who shared their experience at the activities organised by TADI LEWA GROUP.",
+    "defaultName": "Panellist",
+    "event": "Made in Congo fair · 2nd edition",
+    "items": {
+      "p01": "A panellist shares his experience during an on-stage discussion",
+      "p02": "A speaker in a dark suit takes the microphone",
+      "p03": "A speaker in a white jacket answers questions from the audience",
+      "p04": "A panellist in a light suit speaks into the microphone",
+      "p05": "A speaker in a purple shirt engages with the room",
+      "p06": "A panellist speaks during a discussion",
+      "p07": "A speaker with glasses shares his point of view",
+      "p08": "A speaker addresses the audience from the lectern",
+      "p09": "A panellist answers into the microphone facing the audience",
+      "p10": "A speaker addresses the audience with a microphone",
+      "p11": "A speaker takes the floor at the fair's lectern",
+      "p12": "A panellist speaks during a round table"
+    }
+  },
+  "entrepreneursGallery": {
+    "eyebrow": "Made in Congo",
+    "title": "Our entrepreneurs and their products",
+    "description": "Drinks, cosmetics, fashion, jewellery: meet some of the entrepreneurs we support and the Congolese know-how they showcased at our fairs.",
+    "filterLabel": "Filter products by sector",
+    "allFilter": "All",
+    "sectors": {
+      "alimentation": "Food & drinks",
+      "beaute": "Beauty & wellness",
+      "mode": "Fashion & accessories"
+    },
+    "items": {
+      "liqueur": {
+        "title": "Craft liqueur",
+        "text": "An entrepreneur presents her local liqueur.",
+        "alt": "An entrepreneur in a pink blouse presents a bottle of craft liqueur"
+      },
+      "munkoyo": {
+        "title": "Munkoyo",
+        "text": "A traditional drink, now bottled.",
+        "alt": "A bottle of Munkoyo and a served glass on a table"
+      },
+      "tropikin": {
+        "title": "Tropikin",
+        "text": "Natural, refreshing juices.",
+        "alt": "Tropikin stand with its juices and price poster"
+      },
+      "mkCocktail": {
+        "title": "MK Cocktail",
+        "text": "Cocktails and cold drinks on site.",
+        "alt": "MK Cocktail stand with juices, cups and sign"
+      },
+      "freewoman": {
+        "title": "Freewoman",
+        "text": "Comfortable sanitary pads.",
+        "alt": "Freewoman roll-up banner presenting sanitary pads"
+      },
+      "cosmetics": {
+        "title": "Care and cosmetics",
+        "text": "Advice and demos for visitors.",
+        "alt": "An exhibitor presents her cosmetics to visitors"
+      },
+      "skincare": {
+        "title": "Body care",
+        "text": "A full range of skincare products.",
+        "alt": "Table filled with lotions, creams and skincare products"
+      },
+      "perfumes": {
+        "title": "Perfumes",
+        "text": "Gift boxes and fragrances on display.",
+        "alt": "Perfume gift boxes displayed on a stand"
+      },
+      "wax": {
+        "title": "Wax bags",
+        "text": "Leather goods with African prints.",
+        "alt": "Stand of bags and clutches in colourful wax fabrics"
+      },
+      "kendoWax": {
+        "title": "Kendo Wax",
+        "text": "Wax hats and hand fans.",
+        "alt": "Wax hats and fans at the Kendo Wax stand"
+      },
+      "bridal": {
+        "title": "Wedding dresses",
+        "text": "Made-to-measure gowns.",
+        "alt": "Two white wedding dresses displayed on mannequins"
+      },
+      "jewellery": {
+        "title": "Jewellery",
+        "text": "Gold necklaces and sets.",
+        "alt": "Gold necklaces and jewellery in red cases"
+      },
+      "shoes": {
+        "title": "Shoes and leather goods",
+        "text": "Heels, bags and sunglasses.",
+        "alt": "Heels, a red bag and sunglasses on a display"
+      },
+      "tshirts": {
+        "title": "“I love DRC” T-shirts",
+        "text": "Clothes proud of their colours.",
+        "alt": "Green and yellow T-shirts printed “I love DRC”"
+      }
+    }
+  },
   "newsSection": {
     "eyebrow": "News & Publications",
     "title": "Stay up to date with our activities",
@@ -560,25 +737,26 @@
     "directText": "For a quick answer, contact us on WhatsApp or follow our news."
   },
   "images": {
-    "hero": "Three African women entrepreneurs working together around a laptop",
-    "vision": "Glass façade of a modern office building",
-    "teamEvent": "Participants gathered around tables at a conference",
-    "teamSpeaker": "A speaker addressing the audience on stage",
-    "teamPresentation": "A speaker presenting to an attentive room",
-    "aboutHeader": "Three colleagues discussing a project",
-    "aboutMain": "A team working around a table with laptops",
-    "aboutSecondary": "Team meeting in a bright room",
-    "servicesHeader": "Working session around a large meeting table",
-    "serviceEntrepreneurs": "A smiling young entrepreneur in her workspace",
-    "serviceEntreprises": "Business meeting around a laptop",
-    "servicePartenariats": "Handshake between two partners",
-    "contactHeader": "Welcoming a client with a handshake at the office",
-    "newsTeam": "Team members gathered for a group photo",
-    "newsFair": "Exhibitors in traditional outfits at a fair",
-    "newsTraining": "A trainer leading a session for a group of entrepreneurs",
-    "newsSpeakers": "A speaker addressing the audience from a podium",
-    "newsConference": "A full auditorium during a conference",
-    "newsArchives": "A large group gathered at an event",
-    "newsUpcoming": "Two people planning a project on a whiteboard"
+    "hero": "Award winners and organisers together on stage at the Made in Congo fair",
+    "vision": "A packed room follows the talks at the entrepreneurship fair",
+    "teamEvent": "The welcome team hands out programmes to fair participants",
+    "teamStand": "Two team members running the TADI LEWA GROUP stand",
+    "teamWelcome": "A team coordinator welcomes the guests",
+    "aboutHeader": "Three team members in front of the Made in Congo banner",
+    "aboutMain": "Working session with entrepreneurs around a large table",
+    "aboutSecondary": "A participant works on his laptop during a workshop",
+    "servicesHeader": "Support workshop with a group of entrepreneurs",
+    "serviceEntrepreneurs": "An entrepreneur presents her bottle of local liqueur",
+    "serviceEntreprises": "Two participants exchange advice during a workshop",
+    "servicePartenariats": "Two representatives outside the FEC headquarters in Kinshasa",
+    "contactHeader": "The TADI LEWA GROUP stand and its Made in Congo caps",
+    "newsTeam": "Group photo of the award winners on stage",
+    "newsMadeInCongo": "Welcome banner of the Made in Congo entrepreneurship fair, 2nd edition, with partner logos",
+    "newsFair": "Exhibitors behind their wax fashion and accessories stand",
+    "newsTraining": "Entrepreneurs gathered for a training session",
+    "newsSpeakers": "A speaker takes the floor at the lectern",
+    "newsConference": "The audience follows a panel at the entrepreneurship fair",
+    "newsArchives": "A large group of participants together on stage",
+    "newsUpcoming": "The Made in Congo fair stage ready for the panels"
   }
 }

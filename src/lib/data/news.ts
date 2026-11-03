@@ -31,7 +31,7 @@ export const news: NewsItem[] = [
     id: "made-in-congo-2",
     date: "2026-01-16",
     category: "evenement",
-    image: "newsFair",
+    image: "newsMadeInCongo",
     facebookUrl: socialLinks.facebook,
   },
   {

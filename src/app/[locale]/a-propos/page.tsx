@@ -7,6 +7,7 @@ import { AboutIntro } from "@/components/sections/about-intro";
 import { FounderMessage } from "@/components/sections/founder-message";
 import { HistorySection } from "@/components/sections/history-section";
 import { MembersSection } from "@/components/sections/members-section";
+import { PanelistsGallery } from "@/components/sections/panelists-gallery";
 import { PurposeSection } from "@/components/sections/purpose-section";
 import { TeamInAction } from "@/components/sections/team-in-action";
 import { ValuesCards } from "@/components/sections/values-cards";
@@ -58,6 +59,7 @@ export default function AProposPage({ params }: PageProps<"/[locale]/a-propos">)
           secondary={{ label: tc("contactUs"), href: "/contact" }}
         />
       </div>
+      <PanelistsGallery />
       <HistorySection />
       <CtaBand title={tCta("about.title")} description={tCta("about.description")} />
     </main>

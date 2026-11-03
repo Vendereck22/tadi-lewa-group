@@ -170,6 +170,183 @@
     "text": "Une équipe dynamique et engagée pour porter plus loin la vision de TADI LEWA GROUP SARLU : direction, programmes, événements et communication, au service des entrepreneurs.",
     "cta": "Rencontrer l'équipe"
   },
+  "realisations": {
+    "eyebrow": "Nos activités",
+    "title": "Nos réalisations",
+    "description": "Foires entrepreneuriales, panels d'experts, ateliers et remises de prix : retour en images sur les activités que nous avons menées aux côtés des entrepreneurs congolais.",
+    "galleryLabel": "Galerie de nos réalisations",
+    "slideLabel": "Photo {number} sur {total}",
+    "goTo": "Aller à la photo {number}",
+    "previous": "Photo précédente",
+    "next": "Photo suivante",
+    "items": {
+      "awards": {
+        "category": "Remise de prix",
+        "title": "Des entrepreneurs récompensés",
+        "alt": "Remise d'un trophée à une lauréate sur la scène de la foire Made in Congo"
+      },
+      "panels": {
+        "category": "Conférences",
+        "title": "Panels d'experts",
+        "alt": "Un panéliste prend la parole lors d'un débat sur scène"
+      },
+      "fair": {
+        "category": "Foire Made in Congo",
+        "title": "Des stands pour se faire connaître",
+        "alt": "Deux exposants devant leur stand de chapeaux et accessoires en wax"
+      },
+      "workshops": {
+        "category": "Formation",
+        "title": "Ateliers de préparation",
+        "alt": "Entrepreneurs réunis autour d'une grande table pour un atelier"
+      },
+      "culture": {
+        "category": "Animation",
+        "title": "La culture congolaise à l'honneur",
+        "alt": "Danseuses en tenue traditionnelle accompagnées d'un tambour"
+      },
+      "audience": {
+        "category": "Événement",
+        "title": "Un public au rendez-vous",
+        "alt": "Une salle comble suit les interventions de la foire"
+      },
+      "innovation": {
+        "category": "Innovation",
+        "title": "Tech et réalité virtuelle",
+        "alt": "Stand de démonstration de jeux vidéo et de réalité virtuelle en plein air"
+      },
+      "localProducts": {
+        "category": "Produits locaux",
+        "title": "Le savoir-faire local",
+        "alt": "Une exposante présente ses jus artisanaux sur son stand"
+      },
+      "health": {
+        "category": "Santé",
+        "title": "Dépistage gratuit sur place",
+        "alt": "Des soignants réalisent un dépistage auprès d'un visiteur"
+      },
+      "networking": {
+        "category": "Networking",
+        "title": "Des rencontres qui comptent",
+        "alt": "Participants en pleine discussion lors d'un temps d'échange"
+      },
+      "winners": {
+        "category": "Remise de prix",
+        "title": "Nos lauréats",
+        "alt": "Lauréats posant avec leurs trophées sur scène"
+      }
+    }
+  },
+  "viewer": {
+    "previous": "Photo précédente",
+    "next": "Photo suivante",
+    "close": "Fermer la visionneuse"
+  },
+  "panelists": {
+    "eyebrow": "Ils ont répondu présent",
+    "title": "Nos panélistes et intervenants",
+    "description": "Experts, chefs d'entreprise et acteurs de l'écosystème : merci à toutes celles et ceux qui ont partagé leur expérience lors des activités organisées par TADI LEWA GROUP.",
+    "defaultName": "Panéliste",
+    "event": "Foire Made in Congo · 2e édition",
+    "items": {
+      "p01": "Un panéliste partage son expérience lors d'un débat sur scène",
+      "p02": "Un intervenant en costume sombre prend la parole au micro",
+      "p03": "Un intervenant en veste blanche répond aux questions du public",
+      "p04": "Un panéliste en costume clair s'exprime au micro",
+      "p05": "Un intervenant en chemise violette échange avec la salle",
+      "p06": "Une panéliste prend la parole lors d'un débat",
+      "p07": "Un intervenant à lunettes partage son point de vue",
+      "p08": "Un orateur s'adresse au public depuis le pupitre",
+      "p09": "Un panéliste répond au micro face au public",
+      "p10": "Une intervenante s'adresse au public au micro",
+      "p11": "Une oratrice prend la parole au pupitre de la foire",
+      "p12": "Un panéliste intervient lors d'une table ronde"
+    }
+  },
+  "entrepreneursGallery": {
+    "eyebrow": "Made in Congo",
+    "title": "Nos entrepreneurs et leurs produits",
+    "description": "Boissons, cosmétiques, mode, bijoux : découvrez quelques-uns des entrepreneurs que nous accompagnons et le savoir-faire congolais qu'ils ont présenté lors de nos foires.",
+    "filterLabel": "Filtrer les produits par secteur",
+    "allFilter": "Tous",
+    "sectors": {
+      "alimentation": "Boissons & alimentation",
+      "beaute": "Beauté & bien-être",
+      "mode": "Mode & accessoires"
+    },
+    "items": {
+      "liqueur": {
+        "title": "Liqueur artisanale",
+        "text": "Une entrepreneuse présente sa liqueur locale.",
+        "alt": "Une entrepreneuse en chemisier rose présente une bouteille de liqueur artisanale"
+      },
+      "munkoyo": {
+        "title": "Munkoyo",
+        "text": "Boisson traditionnelle mise en bouteille.",
+        "alt": "Bouteille de Munkoyo et verre servi sur une table"
+      },
+      "tropikin": {
+        "title": "Tropikin",
+        "text": "Jus naturels et rafraîchissants.",
+        "alt": "Stand Tropikin avec ses jus et son affiche de prix"
+      },
+      "mkCocktail": {
+        "title": "MK Cocktail",
+        "text": "Cocktails et boissons fraîches sur place.",
+        "alt": "Stand MK Cocktail avec jus, gobelets et pancarte"
+      },
+      "freewoman": {
+        "title": "Freewoman",
+        "text": "Serviettes hygiéniques confortables.",
+        "alt": "Kakémono Freewoman présentant des serviettes hygiéniques"
+      },
+      "cosmetics": {
+        "title": "Soins et cosmétiques",
+        "text": "Conseils et démonstration aux visiteuses.",
+        "alt": "Une exposante présente ses produits cosmétiques à des visiteuses"
+      },
+      "skincare": {
+        "title": "Soins du corps",
+        "text": "Une gamme complète de produits de soin.",
+        "alt": "Table garnie de laits, crèmes et produits de soin"
+      },
+      "perfumes": {
+        "title": "Parfums",
+        "text": "Coffrets et fragrances en vitrine.",
+        "alt": "Coffrets de parfums exposés sur un stand"
+      },
+      "wax": {
+        "title": "Sacs en wax",
+        "text": "Maroquinerie aux motifs africains.",
+        "alt": "Stand de sacs et pochettes aux tissus wax colorés"
+      },
+      "kendoWax": {
+        "title": "Kendo Wax",
+        "text": "Chapeaux et éventails en wax.",
+        "alt": "Chapeaux et éventails en wax sur le stand Kendo Wax"
+      },
+      "bridal": {
+        "title": "Robes de mariée",
+        "text": "Création de robes sur mesure.",
+        "alt": "Deux robes de mariée blanches exposées sur des mannequins"
+      },
+      "jewellery": {
+        "title": "Bijoux",
+        "text": "Colliers et parures dorées.",
+        "alt": "Colliers et bijoux dorés dans des écrins rouges"
+      },
+      "shoes": {
+        "title": "Chaussures et maroquinerie",
+        "text": "Escarpins, sacs et lunettes.",
+        "alt": "Escarpins, sac rouge et lunettes de soleil sur un présentoir"
+      },
+      "tshirts": {
+        "title": "T-shirts « J'aime RDC »",
+        "text": "Des vêtements fiers de leurs couleurs.",
+        "alt": "T-shirts vert et jaune imprimés « J'aime RDC »"
+      }
+    }
+  },
   "newsSection": {
     "eyebrow": "Actualités & Publications",
     "title": "Restez informés de nos activités",
@@ -612,25 +789,26 @@
     "directText": "Pour une réponse rapide, contactez-nous sur WhatsApp ou suivez nos actualités."
   },
   "images": {
-    "hero": "Trois entrepreneuses africaines travaillent ensemble autour d'un ordinateur portable",
-    "vision": "Façade vitrée d'un immeuble de bureaux moderne",
-    "teamEvent": "Participants réunis autour de tables lors d'une conférence",
-    "teamSpeaker": "Une intervenante s'adresse au public sur scène",
-    "teamPresentation": "Une intervenante présente devant une salle attentive",
-    "aboutHeader": "Trois collègues échangent autour d'un projet",
-    "aboutMain": "Une équipe travaille autour d'une table avec des ordinateurs portables",
-    "aboutSecondary": "Réunion d'équipe dans une salle lumineuse",
-    "servicesHeader": "Séance de travail autour d'une grande table de réunion",
-    "serviceEntrepreneurs": "Une jeune entrepreneuse souriante dans son espace de travail",
-    "serviceEntreprises": "Rendez-vous d'affaires autour d'un ordinateur portable",
-    "servicePartenariats": "Poignée de main entre deux partenaires",
-    "contactHeader": "Accueil d'un rendez-vous avec une poignée de main au bureau",
-    "newsTeam": "Membres d'une équipe réunis pour une photo de groupe",
-    "newsFair": "Exposantes en tenues traditionnelles lors d'une foire",
-    "newsTraining": "Une formatrice anime une séance devant un groupe d'entrepreneurs",
+    "hero": "Lauréats et organisateurs réunis sur scène lors de la foire Made in Congo",
+    "vision": "Une salle comble suit les interventions de la foire entrepreneuriale",
+    "teamEvent": "L'équipe d'accueil distribue les programmes aux participants de la foire",
+    "teamStand": "Deux membres de l'équipe tiennent le stand TADI LEWA GROUP",
+    "teamWelcome": "Une coordinatrice de l'équipe accueille les invités",
+    "aboutHeader": "Trois membres de l'équipe devant la banderole Made in Congo",
+    "aboutMain": "Séance de travail avec des entrepreneurs autour d'une grande table",
+    "aboutSecondary": "Un participant travaille sur son ordinateur pendant un atelier",
+    "servicesHeader": "Atelier d'accompagnement avec un groupe d'entrepreneurs",
+    "serviceEntrepreneurs": "Une entrepreneuse présente sa bouteille de liqueur locale",
+    "serviceEntreprises": "Échange de conseils entre deux participants lors d'un atelier",
+    "servicePartenariats": "Deux représentants devant le siège de la FEC à Kinshasa",
+    "contactHeader": "Le stand TADI LEWA GROUP et ses casquettes Made in Congo",
+    "newsTeam": "Photo de groupe des lauréats sur scène",
+    "newsMadeInCongo": "Banderole d'accueil de la foire entrepreneuriale Made in Congo, 2e édition, avec les logos des partenaires",
+    "newsFair": "Exposants derrière leur stand de mode et d'accessoires en wax",
+    "newsTraining": "Entrepreneurs réunis pour une séance de formation",
     "newsSpeakers": "Une intervenante prend la parole au pupitre",
-    "newsConference": "Un auditorium rempli lors d'une conférence",
-    "newsArchives": "Un grand groupe réuni lors d'un événement",
-    "newsUpcoming": "Deux personnes planifient un projet sur un tableau blanc"
+    "newsConference": "Le public assiste à un panel de la foire entrepreneuriale",
+    "newsArchives": "Un grand groupe de participants réuni sur scène",
+    "newsUpcoming": "La scène de la foire Made in Congo prête à accueillir les panels"
   }
 }

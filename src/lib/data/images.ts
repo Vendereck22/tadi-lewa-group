@@ -1,110 +1,44 @@
-// Photos du site : Unsplash, licence gratuite (usage commercial autorisé, crédit facultatif).
-// Images d'illustration en attendant les vraies photos de TADI LEWA GROUP : il suffit de remplacer
-// `src` par un chemin local (ex. "/images/siege.webp") pour changer une photo partout.
+// Photos du site : vraies photos de TADI LEWA GROUP, rangées par catégorie dans
+// public/Images (hero-section, evenements, entrepreneuriat, formations-ateliers…).
+// Changer `src` ici remplace la photo partout où elle apparaît.
 
 // Le texte alternatif de chaque photo est traduit : clé « images.<nom de la photo> »
 export type SitePhoto = {
   src: string;
-  /** Photographe Unsplash */
-  author: string;
 };
-
-// Source en haute définition (assez large pour les écrans Retina) : l'optimiseur de Next
-// la redimensionne ensuite à la taille réellement affichée et la sert en AVIF/WebP
-function unsplash(id: string, width = 2400) {
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=90`;
-}
 
 export const photos = {
   // Accueil
-  hero: {
-    src: unsplash("photo-1655720357872-ce227e4164ba", 3200),
-    author: "Iwaria Inc.",
-  },
-  vision: {
-    src: unsplash("photo-1621831337128-35676ca30868"),
-    author: "Kenrick Baksh",
-  },
-  teamEvent: {
-    src: unsplash("photo-1644174547761-de211415598e"),
-    author: "Andrea Qoqonga",
-  },
-  teamSpeaker: {
-    src: unsplash("photo-1679579664878-2c025e3f87b0", 1600),
-    author: "Jametlene Reskp",
-  },
-  teamPresentation: {
-    src: unsplash("photo-1715960350190-2ed0a812962d", 1600),
-    author: "Jametlene Reskp",
-  },
+  hero: { src: "/Images/hero-section/hero-section-02.jpeg" },
+  vision: { src: "/Images/hero-section/hero-section-05.jpeg" },
+  // Section « Notre équipe » : l'équipe d'organisation (les intervenants ont leur propre galerie)
+  teamEvent: { src: "/Images/evenements/networking/networking-11.jpeg" },
+  teamStand: { src: "/Images/entrepreneuriat/stands-exposants/stands-exposants-41.jpeg" },
+  teamWelcome: { src: "/Images/evenements/networking/networking-16.jpeg" },
 
   // À propos
-  aboutHeader: {
-    src: unsplash("photo-1739302750702-e26a61113758"),
-    author: "Ninthgrid",
-  },
-  aboutMain: {
-    src: unsplash("photo-1573164574397-dd250bc8a598", 1600),
-    author: "Christina @ wocintechchat.com",
-  },
-  aboutSecondary: {
-    src: unsplash("photo-1573164574511-73c773193279", 1600),
-    author: "Christina @ wocintechchat.com",
-  },
+  aboutHeader: { src: "/Images/entrepreneuriat/stands-exposants/stands-exposants-19.jpeg" },
+  aboutMain: { src: "/Images/formations-ateliers/formations-ateliers-06.jpeg" },
+  aboutSecondary: { src: "/Images/formations-ateliers/formations-ateliers-02.jpeg" },
 
   // Services
-  servicesHeader: {
-    src: unsplash("photo-1573164574572-cb89e39749b4"),
-    author: "Christina @ wocintechchat.com",
-  },
-  serviceEntrepreneurs: {
-    src: unsplash("photo-1657449036184-4fb912035102", 1600),
-    author: "Francis Odeyemi",
-  },
-  serviceEntreprises: {
-    src: unsplash("photo-1653566031486-dc4ead13a35d", 1600),
-    author: "UK Black Tech",
-  },
-  servicePartenariats: {
-    src: unsplash("photo-1521791136064-7986c2920216", 1600),
-    author: "Cytonn Photography",
-  },
+  servicesHeader: { src: "/Images/formations-ateliers/formations-ateliers-05.jpeg" },
+  serviceEntrepreneurs: { src: "/Images/entrepreneuriat/produits-locaux/produits-locaux-02.jpeg" },
+  serviceEntreprises: { src: "/Images/formations-ateliers/formations-ateliers-04.jpeg" },
+  servicePartenariats: { src: "/Images/partenariats/partenariats-01.jpeg" },
 
   // Contact
-  contactHeader: {
-    src: unsplash("photo-1686771416282-3888ddaf249b"),
-    author: "Mina Rad",
-  },
+  contactHeader: { src: "/Images/merchandising/merchandising-09.jpeg" },
 
   // Actualités (et galerie « L'équipe en action »)
-  newsTeam: {
-    src: unsplash("photo-1739298061757-7a3339cee982"),
-    author: "Ninthgrid",
-  },
-  newsFair: {
-    src: unsplash("photo-1737649507334-92c9fa4beb7c", 1600),
-    author: "Eyo Archibong",
-  },
-  newsTraining: {
-    src: unsplash("photo-1694286067026-a8aa654481f7", 1600),
-    author: "Michael Ali",
-  },
-  newsSpeakers: {
-    src: unsplash("photo-1778877032995-4ab6cd8fe106", 1600),
-    author: "Ufoma Ojo",
-  },
-  newsConference: {
-    src: unsplash("photo-1778876091112-f7e985acdb01", 1600),
-    author: "Ufoma Ojo",
-  },
-  newsArchives: {
-    src: unsplash("photo-1761666519915-857c3656b856", 1600),
-    author: "Random Institute",
-  },
-  newsUpcoming: {
-    src: unsplash("photo-1532622785990-d2c36a76f5a6", 1600),
-    author: "Kaleidico",
-  },
+  newsTeam: { src: "/Images/evenements/remise-de-prix/remise-de-prix-01.jpeg" },
+  newsMadeInCongo: { src: "/Images/evenements/ambiance-decor/ambiance-decor-07.jpeg" },
+  newsFair: { src: "/Images/entrepreneuriat/stands-exposants/stands-exposants-32.jpeg" },
+  newsTraining: { src: "/Images/formations-ateliers/formations-ateliers-01.jpeg" },
+  newsSpeakers: { src: "/Images/evenements/conferences-panels/conferences-panels-30.jpeg" },
+  newsConference: { src: "/Images/hero-section/hero-section-06.jpeg" },
+  newsArchives: { src: "/Images/evenements/remise-de-prix/remise-de-prix-26.jpeg" },
+  newsUpcoming: { src: "/Images/hero-section/hero-section-08.jpeg" },
 } satisfies Record<string, SitePhoto>;
 
 export type PhotoKey = keyof typeof photos;

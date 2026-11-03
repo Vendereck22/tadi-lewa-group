@@ -31,8 +31,8 @@ export function TeamPreview() {
         </div>
         <AspectRatio ratio={353 / 194} className="overflow-hidden">
           <Image
-            src={photos.teamSpeaker.src}
-            alt={ti("teamSpeaker")}
+            src={photos.teamStand.src}
+            alt={ti("teamStand")}
             fill
             sizes="(min-width: 1024px) 300px, 50vw"
             className="object-cover"
@@ -40,8 +40,8 @@ export function TeamPreview() {
         </AspectRatio>
         <AspectRatio ratio={353 / 194} className="overflow-hidden">
           <Image
-            src={photos.teamPresentation.src}
-            alt={ti("teamPresentation")}
+            src={photos.teamWelcome.src}
+            alt={ti("teamWelcome")}
             fill
             sizes="(min-width: 1024px) 300px, 50vw"
             className="object-cover"
