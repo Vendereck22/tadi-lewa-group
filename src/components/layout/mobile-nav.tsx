@@ -28,7 +28,7 @@ export function MobileNav({ pathname }: { pathname: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" aria-label={t("openMenu")} className="size-11 lg:hidden">
+        <Button variant="outline" size="icon" aria-label={t("openMenu")} className="size-11 lg:hidden group-data-[overlay=true]/header:border-white/20 group-data-[overlay=true]/header:bg-white/10 group-data-[overlay=true]/header:text-white group-data-[overlay=true]/header:hover:bg-white/20 group-data-[overlay=true]/header:hover:text-white">
           <Menu className="size-5" />
         </Button>
       </SheetTrigger>

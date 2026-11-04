@@ -23,21 +23,23 @@ export function Logo({ variant = "default", className }: Props) {
         <Image src="/logo/logo-white.png" alt="" width={900} height={620} className="h-auto w-44" />
       ) : (
         <>
-          {/* Deux versions : le texte bleu marine passe en blanc en mode nuit */}
+          {/* Deux versions : texte blanc en mode nuit, et sur l'en-tête bleu nuit de l'accueil */}
           <Image
             src="/logo/logo-horizontal.png"
             alt=""
             width={642}
             height={192}
             preload
-            className="h-12 w-auto md:h-14 dark:hidden"
+            className="h-12 w-auto md:h-14 dark:hidden group-data-[overlay=true]/header:hidden"
           />
           <Image
             src="/logo/logo-horizontal-white.png"
             alt=""
             width={642}
             height={192}
-            className="hidden h-12 w-auto md:h-14 dark:block"
+            // Visible dès l'arrivée sur l'accueil (en-tête bleu nuit) : pas de chargement différé
+            loading="eager"
+            className="hidden h-12 w-auto md:h-14 dark:block group-data-[overlay=true]/header:block"
           />
         </>
       )}

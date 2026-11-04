@@ -49,7 +49,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   return (
     // suppressHydrationWarning : next-themes ajoute la classe « dark » avant l'hydratation
     <html lang={locale} className={`${inter.variable} ${montserrat.variable}`} suppressHydrationWarning>
-      <body>
+      {/* id « top » : cible du lien « Retour en haut » du pied de page */}
+      <body id="top">
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <TooltipProvider>

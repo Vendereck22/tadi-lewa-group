@@ -20,7 +20,7 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="relative size-10 shadow-none">
+        <Button variant="outline" size="icon" className="relative size-10 shadow-none group-data-[overlay=true]/header:border-white/20 group-data-[overlay=true]/header:bg-white/10 group-data-[overlay=true]/header:text-white group-data-[overlay=true]/header:hover:bg-white/20 group-data-[overlay=true]/header:hover:text-white">
           <Sun className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
           <Moon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
           <span className="sr-only">{t("toggle")}</span>

@@ -6,8 +6,10 @@ import { EntrepreneursGallery } from "@/components/sections/entrepreneurs-galler
 import { ExploreGrid } from "@/components/sections/explore-grid";
 import { Hero } from "@/components/sections/hero";
 import { NewsSection } from "@/components/sections/news-section";
+import { PartnersSection } from "@/components/sections/partners-section";
 import { RealisationsGallery } from "@/components/sections/realisations-gallery";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { StatsBand } from "@/components/sections/stats-band";
 import { TeamPreview } from "@/components/sections/team-preview";
 import { ValuesStrip } from "@/components/sections/values-strip";
 import { VisionSection } from "@/components/sections/vision-section";
@@ -23,11 +25,13 @@ export default function Home({ params }: PageProps<"/[locale]">) {
       <Hero />
       <ValuesStrip />
       <ServicesGrid />
+      <StatsBand />
       <VisionSection />
       <ExploreGrid />
       <EntrepreneursGallery />
       <TeamPreview />
       <RealisationsGallery />
+      <PartnersSection />
       <NewsSection />
       <CtaBand
         title={

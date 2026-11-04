@@ -55,7 +55,18 @@
     "slogan": "Together, let's build a better future.",
     "navigation": "Navigation",
     "follow": "Follow us",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "activitiesTitle": "Our activities",
+    "activities": {
+      "entrepreneurs": "Entrepreneur support",
+      "companies": "Business solutions",
+      "training": "Training",
+      "partnerships": "Partnerships",
+      "travel": "Travel",
+      "events": "Events"
+    },
+    "newsletterTitle": "Newsletter",
+    "backToTop": "Back to top"
   },
   "hero": {
     "badge": "Welcome to TADI LEWA GROUP SARLU",
@@ -139,7 +150,8 @@
       "training": "Training",
       "upcoming": "Upcoming projects",
       "archives": "Archives",
-      "partnerships": "Partnerships"
+      "partnerships": "Partnerships",
+      "travel": "Travel"
     }
   },
   "teamPreview": {
@@ -153,10 +165,6 @@
     "title": "Our achievements",
     "description": "Entrepreneurship fairs, expert panels, workshops and award ceremonies: a look back at the activities we have run alongside Congolese entrepreneurs.",
     "galleryLabel": "Gallery of our achievements",
-    "slideLabel": "Photo {number} of {total}",
-    "goTo": "Go to photo {number}",
-    "previous": "Previous photo",
-    "next": "Next photo",
     "items": {
       "awards": {
         "category": "Awards",
@@ -212,6 +220,11 @@
         "category": "Awards",
         "title": "Our winners",
         "alt": "Winners posing with their trophies on stage"
+      },
+      "exhibition": {
+        "category": "Made in Congo fair",
+        "title": "The exhibition area",
+        "alt": "Stands under white tents with I love DRC T-shirts in the fair's exhibition area"
       }
     }
   },
@@ -312,17 +325,169 @@
         "title": "Jewellery",
         "text": "Gold necklaces and sets.",
         "alt": "Gold necklaces and jewellery in red cases"
-      },
-      "shoes": {
-        "title": "Shoes and leather goods",
-        "text": "Heels, bags and sunglasses.",
-        "alt": "Heels, a red bag and sunglasses on a display"
-      },
-      "tshirts": {
-        "title": "“I love DRC” T-shirts",
-        "text": "Clothes proud of their colours.",
-        "alt": "Green and yellow T-shirts printed “I love DRC”"
       }
+    }
+  },
+  "travelPage": {
+    "meta": {
+      "title": "Travel",
+      "description": "Leisure, business and study trips: TADI LEWA GROUP organises your journey and supports you from planning to return."
+    },
+    "header": {
+      "crumb": "Travel",
+      "titleStart": "Travel with",
+      "titleHighlight": "TADI LEWA GROUP",
+      "description": "Leisure, business or studies: we organise your trip and support you at every step, in the DRC and abroad.",
+      "imageAlt": "A traveller on the shore of Lake Kivu, surrounded by greenery",
+      "anchorsLabel": "Our travel packages"
+    },
+    "offers": {
+      "eyebrow": "Our packages",
+      "title": "A trip for every project",
+      "intro": "Three packages designed for tourists, entrepreneurs and students, always tailored to your goals and budget.",
+      "items": {
+        "tourisme": {
+          "label": "Tourism",
+          "title": "Leisure travel",
+          "text": "Discover the DRC and its wonders: Kinshasa, Lake Kivu, national parks and cultural sites, with a turnkey programme.",
+          "features": [
+            "Tailor-made tours and stays",
+            "Accommodation and transport arranged",
+            "Guided visits and cultural activities",
+            "Family or group trips"
+          ],
+          "cta": "Plan my stay",
+          "alt": "The Notre-Dame du Congo cathedral in Kinshasa under a blue sky"
+        },
+        "affaires": {
+          "label": "Business & entrepreneurship",
+          "title": "Business and entrepreneurship trips",
+          "text": "Prospecting missions, trade shows, fairs and B2B meetings: we prepare your trips to grow your network and your markets.",
+          "features": [
+            "Attending trade shows and fairs",
+            "Meetings with partners and institutions",
+            "Prospecting missions abroad",
+            "Logistics and schedule handled"
+          ],
+          "cta": "Organise my mission",
+          "alt": "Two team members outside the FEC headquarters in Kinshasa"
+        },
+        "etudes": {
+          "label": "Studies",
+          "title": "Study trips",
+          "text": "Studying abroad or joining a training programme: we guide you through the choice, the paperwork and settling in.",
+          "features": [
+            "Guidance and choice of institution",
+            "Admission file and visa application",
+            "Tickets, housing and insurance",
+            "Welcome and follow-up on arrival"
+          ],
+          "cta": "Plan my study project",
+          "alt": "Two participants talking at a table during a preparation session"
+        }
+      }
+    },
+    "why": {
+      "label": "Why travel with us",
+      "items": {
+        "tailored": {
+          "title": "Tailor-made",
+          "text": "A programme built around your goals."
+        },
+        "paperwork": {
+          "title": "Easy paperwork",
+          "text": "Visa, tickets and files: we handle it."
+        },
+        "network": {
+          "title": "A trusted network",
+          "text": "Selected partners in the DRC and abroad."
+        },
+        "support": {
+          "title": "Support",
+          "text": "A contact available before, during and after."
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Your trip in 4 steps",
+      "items": {
+        "listen": {
+          "title": "Discussion",
+          "text": "You tell us about your project, dates and budget."
+        },
+        "program": {
+          "title": "Programme",
+          "text": "We send you an itinerary and a detailed quote."
+        },
+        "formalities": {
+          "title": "Paperwork",
+          "text": "Visa, bookings, insurance: we prepare the whole file."
+        },
+        "onSite": {
+          "title": "Departure and follow-up",
+          "text": "We stay reachable throughout the trip, until you're back."
+        }
+      }
+    },
+    "gallery": {
+      "eyebrow": "In pictures",
+      "title": "Our trips in pictures",
+      "description": "A few memories of journeys, discoveries and missions carried out by our team.",
+      "items": {
+        "lake": {
+          "title": "On the shore of Lake Kivu",
+          "place": "Eastern DRC",
+          "alt": "A traveller standing on a rock facing Lake Kivu"
+        },
+        "cathedral": {
+          "title": "Notre-Dame du Congo",
+          "place": "Kinshasa",
+          "alt": "The Notre-Dame du Congo cathedral in Kinshasa"
+        },
+        "hotel": {
+          "title": "Art and culture",
+          "place": "Hotel in Kinshasa",
+          "alt": "A traveller in front of a large colourful mural in a hotel lobby"
+        },
+        "lodge": {
+          "title": "Nature stopover",
+          "place": "Lodge in the DRC",
+          "alt": "A traveller in the lush garden of a lodge"
+        },
+        "businessVisit": {
+          "title": "Business mission",
+          "place": "FEC headquarters, Kinshasa",
+          "alt": "Two team members outside the Federation of Congolese Enterprises headquarters"
+        },
+        "transport": {
+          "title": "Organised transport",
+          "place": "Group transfers",
+          "alt": "A white minibus ready for a group transfer"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to plan your trip?",
+      "description": "Tell us about your project: we'll get back to you with a tailored programme and quote.",
+      "button": "Request a quote"
+    }
+  },
+  "partnersSection": {
+    "eyebrow": "Partners",
+    "title": "They trust us",
+    "description": "Companies, institutions and ecosystem players: our partners help us grow Congolese entrepreneurs.",
+    "listLabel": "Our partners' logos",
+    "joinText": "Would you like to support Congolese entrepreneurship?",
+    "joinCta": "Become a partner"
+  },
+  "statsSection": {
+    "label": "TADI LEWA GROUP in figures",
+    "items": {
+      "editions": "Made in Congo editions",
+      "exhibitors": "Exhibitors supported",
+      "speakers": "Panellists and speakers",
+      "participants": "Event participants"
     }
   },
   "newsSection": {
@@ -424,6 +589,7 @@
       "solution-entreprise": "Business solution",
       "partenariat": "Partnership",
       "formation": "Training",
+      "voyage": "Travel",
       "autre": "Other"
     },
     "profiles": {

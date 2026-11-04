@@ -3,6 +3,7 @@ import {
   Folder,
   GraduationCap,
   Newspaper,
+  Plane,
   Rocket,
   Users,
   type LucideIcon,
@@ -30,6 +31,7 @@ export const exploreLinks: { href: string; key: string; icon: LucideIcon }[] = [
   { href: "/actualites?categorie=projet-a-venir", key: "upcoming", icon: Rocket },
   { href: "/actualites?categorie=archives", key: "archives", icon: Folder },
   { href: "/services#partenariats", key: "partnerships", icon: Users },
+  { href: "/voyages", key: "travel", icon: Plane },
 ];
 
 // Adresse et horaires (textes traduits) : clé « contactInfo » de messages/*.json

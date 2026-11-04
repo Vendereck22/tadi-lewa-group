@@ -17,9 +17,13 @@ export function ExploreGrid() {
         className="max-w-none"
       />
 
-      <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-12 lg:grid-cols-6 lg:gap-5">
+      {/* 7 tuiles : la dernière est centrée (mobile : pleine largeur, tablette : colonne du milieu) */}
+      <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-12 lg:grid-cols-7 lg:gap-5">
         {tiles.map((tile) => (
-          <li key={tile.key}>
+          <li
+            key={tile.key}
+            className="last:col-span-2 sm:last:col-span-1 sm:last:col-start-2 lg:last:col-start-auto"
+          >
             <Card className="h-full rounded-3xl py-0 shadow-none transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-card has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50">
               <Link
                 href={tile.href}

@@ -17,8 +17,8 @@ type Filter = EntrepreneurSector | "all";
 
 const filters: Filter[] = ["all", ...entrepreneurSectors];
 
-// Mosaïque des entrepreneurs et de leurs produits, filtrable par secteur ;
-// chaque photo garde ses proportions et s'ouvre en grand dans la visionneuse
+// Grille des entrepreneurs et de leurs produits, filtrable par secteur ;
+// chaque photo est recadrée sur son sujet et s'ouvre en grand dans la visionneuse
 export function EntrepreneursGallery() {
   const t = useTranslations("entrepreneursGallery");
   const [filter, setFilter] = useState<Filter>("all");
@@ -67,22 +67,25 @@ export function EntrepreneursGallery() {
         ))}
       </ToggleGroup>
 
-      {/* Colonnes CSS : effet mosaïque qui respecte les photos en hauteur comme en largeur */}
-      <ul aria-live="polite" className="mt-10 columns-2 gap-3 md:mt-12 md:columns-3 md:gap-5 lg:columns-4">
+      {/* Grille régulière : cartes de même format (2 / 3 / 4 par ligne), dernière ligne centrée */}
+      <ul aria-live="polite" className="mt-10 flex flex-wrap justify-center gap-3 md:mt-12 md:gap-5">
         {items.map((item, index) => (
-          <li key={item.id} className="mb-3 break-inside-avoid md:mb-5">
+          <li
+            key={item.id}
+            className="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-1.5rem)/3)] md:w-[calc((100%-2.5rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"
+          >
             <button
               type="button"
               onClick={() => setViewer(index)}
-              className="group relative block w-full overflow-hidden text-left outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              className="group relative block aspect-[4/5] w-full overflow-hidden text-left outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
             >
               <Image
                 src={item.src}
                 alt={t(`items.${item.id}.alt`)}
-                width={item.width}
-                height={item.height}
-                sizes="(min-width: 1024px) 290px, (min-width: 768px) 33vw, 50vw"
-                className="h-auto w-full transition duration-700 group-hover:scale-105"
+                fill
+                sizes="(min-width: 1024px) 290px, (min-width: 640px) 33vw, 50vw"
+                style={{ objectPosition: item.position }}
+                className="object-cover transition duration-700 group-hover:scale-105"
               />
               <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 via-45% to-transparent transition group-hover:from-black/85" />
               <span className="absolute top-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-primary backdrop-blur md:text-xs">

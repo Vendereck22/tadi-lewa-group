@@ -151,3 +151,18 @@
 @utility shadow-card {
   box-shadow: 0 10px 30px rgb(10 42 102 / 0.06);
 }
+
+/* Défilement continu des logos partenaires (la piste contient la liste deux fois) */
+@theme {
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-marquee-reverse: marquee 45s linear infinite reverse;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

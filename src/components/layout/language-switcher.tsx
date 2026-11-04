@@ -45,7 +45,10 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       onValueChange={switchTo}
       aria-label={t("label")}
       disabled={isPending}
-      className={cn("rounded-full border bg-card p-0.5", className)}
+      className={cn(
+        "rounded-full border bg-card p-0.5 transition-colors group-data-[overlay=true]/header:border-white/20 group-data-[overlay=true]/header:bg-white/10",
+        className,
+      )}
     >
       {routing.locales.map((code) => (
         <ToggleGroupItem
@@ -53,7 +56,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           value={code}
           lang={code}
           aria-label={t(code)}
-          className="h-8 min-w-10 rounded-full px-2.5 text-xs font-bold tracking-wide uppercase data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+          className="h-8 min-w-10 rounded-full px-2.5 text-xs font-bold tracking-wide uppercase data-[state=on]:bg-primary data-[state=on]:text-primary-foreground group-data-[overlay=true]/header:text-white/85 group-data-[overlay=true]/header:hover:bg-white/10 group-data-[overlay=true]/header:hover:text-white group-data-[overlay=true]/header:data-[state=on]:bg-white group-data-[overlay=true]/header:data-[state=on]:text-brand-deep"
         >
           {code}
         </ToggleGroupItem>

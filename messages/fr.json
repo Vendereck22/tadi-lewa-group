@@ -61,7 +61,18 @@
     "slogan": "Ensemble, construisons un avenir meilleur.",
     "navigation": "Navigation",
     "follow": "Suivez-nous",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "activitiesTitle": "Nos activités",
+    "activities": {
+      "entrepreneurs": "Accompagnement entrepreneurs",
+      "companies": "Solutions entreprises",
+      "training": "Formations",
+      "partnerships": "Partenariats",
+      "travel": "Voyages",
+      "events": "Événements"
+    },
+    "newsletterTitle": "Newsletter",
+    "backToTop": "Retour en haut"
   },
   "hero": {
     "badge": "Bienvenue chez TADI LEWA GROUP SARLU",
@@ -161,7 +172,8 @@
       "training": "Formation",
       "upcoming": "Projets à venir",
       "archives": "Archives",
-      "partnerships": "Partenariats"
+      "partnerships": "Partenariats",
+      "travel": "Voyages"
     }
   },
   "teamPreview": {
@@ -175,10 +187,6 @@
     "title": "Nos réalisations",
     "description": "Foires entrepreneuriales, panels d'experts, ateliers et remises de prix : retour en images sur les activités que nous avons menées aux côtés des entrepreneurs congolais.",
     "galleryLabel": "Galerie de nos réalisations",
-    "slideLabel": "Photo {number} sur {total}",
-    "goTo": "Aller à la photo {number}",
-    "previous": "Photo précédente",
-    "next": "Photo suivante",
     "items": {
       "awards": {
         "category": "Remise de prix",
@@ -234,6 +242,11 @@
         "category": "Remise de prix",
         "title": "Nos lauréats",
         "alt": "Lauréats posant avec leurs trophées sur scène"
+      },
+      "exhibition": {
+        "category": "Foire Made in Congo",
+        "title": "L'espace exposition",
+        "alt": "Stands sous tentes blanches avec t-shirts J'aime RDC dans l'espace exposition de la foire"
       }
     }
   },
@@ -334,17 +347,169 @@
         "title": "Bijoux",
         "text": "Colliers et parures dorées.",
         "alt": "Colliers et bijoux dorés dans des écrins rouges"
-      },
-      "shoes": {
-        "title": "Chaussures et maroquinerie",
-        "text": "Escarpins, sacs et lunettes.",
-        "alt": "Escarpins, sac rouge et lunettes de soleil sur un présentoir"
-      },
-      "tshirts": {
-        "title": "T-shirts « J'aime RDC »",
-        "text": "Des vêtements fiers de leurs couleurs.",
-        "alt": "T-shirts vert et jaune imprimés « J'aime RDC »"
       }
+    }
+  },
+  "travelPage": {
+    "meta": {
+      "title": "Voyages",
+      "description": "Voyages touristiques, d'affaires et d'études : TADI LEWA GROUP organise et vous accompagne de la préparation au retour."
+    },
+    "header": {
+      "crumb": "Voyages",
+      "titleStart": "Voyagez avec",
+      "titleHighlight": "TADI LEWA GROUP",
+      "description": "Découverte, affaires ou études : nous organisons votre voyage et vous accompagnons à chaque étape, en RDC comme à l'étranger.",
+      "imageAlt": "Un voyageur au bord du lac Kivu, entouré de verdure",
+      "anchorsLabel": "Nos formules de voyage"
+    },
+    "offers": {
+      "eyebrow": "Nos formules",
+      "title": "Un voyage pour chaque projet",
+      "intro": "Trois formules pensées pour les touristes, les entrepreneurs et les étudiants, toujours adaptées à vos objectifs et à votre budget.",
+      "items": {
+        "tourisme": {
+          "label": "Tourisme",
+          "title": "Voyages touristiques",
+          "text": "Partez à la découverte de la RDC et de ses merveilles : Kinshasa, le lac Kivu, les parcs et les sites culturels, avec un programme clé en main.",
+          "features": [
+            "Circuits et séjours sur mesure",
+            "Hébergement et transport organisés",
+            "Visites guidées et activités culturelles",
+            "Voyages en famille ou en groupe"
+          ],
+          "cta": "Préparer mon séjour",
+          "alt": "La cathédrale Notre-Dame du Congo à Kinshasa sous un ciel bleu"
+        },
+        "affaires": {
+          "label": "Affaires & entrepreneuriat",
+          "title": "Voyages d'affaires et d'entrepreneuriat",
+          "text": "Missions de prospection, salons, foires et rencontres B2B : nous préparons vos déplacements pour développer votre réseau et vos marchés.",
+          "features": [
+            "Participation aux salons et foires",
+            "Rendez-vous avec partenaires et institutions",
+            "Missions de prospection à l'étranger",
+            "Logistique et agenda pris en charge"
+          ],
+          "cta": "Organiser ma mission",
+          "alt": "Deux membres de l'équipe devant le siège de la FEC à Kinshasa"
+        },
+        "etudes": {
+          "label": "Études",
+          "title": "Voyages d'études",
+          "text": "Étudier à l'étranger ou participer à un programme de formation : nous vous guidons dans le choix, les démarches et l'installation.",
+          "features": [
+            "Orientation et choix de l'établissement",
+            "Dossier d'admission et demande de visa",
+            "Billets, logement et assurance",
+            "Accueil et suivi à l'arrivée"
+          ],
+          "cta": "Préparer mon projet d'études",
+          "alt": "Deux participantes échangent autour d'une table lors d'une séance de préparation"
+        }
+      }
+    },
+    "why": {
+      "label": "Pourquoi voyager avec nous",
+      "items": {
+        "tailored": {
+          "title": "Sur mesure",
+          "text": "Un programme construit selon vos objectifs."
+        },
+        "paperwork": {
+          "title": "Formalités simplifiées",
+          "text": "Visa, billets et dossiers : on s'en occupe."
+        },
+        "network": {
+          "title": "Un réseau de confiance",
+          "text": "Partenaires sélectionnés en RDC et à l'étranger."
+        },
+        "support": {
+          "title": "Accompagnement",
+          "text": "Un contact disponible avant, pendant et après."
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "Comment ça marche",
+      "title": "Votre voyage en 4 étapes",
+      "items": {
+        "listen": {
+          "title": "Échange",
+          "text": "Vous nous présentez votre projet, vos dates et votre budget."
+        },
+        "program": {
+          "title": "Programme",
+          "text": "Nous vous proposons un itinéraire et un devis détaillé."
+        },
+        "formalities": {
+          "title": "Formalités",
+          "text": "Visa, réservations, assurance : nous préparons tout le dossier."
+        },
+        "onSite": {
+          "title": "Départ et suivi",
+          "text": "Nous restons joignables pendant tout le voyage, jusqu'au retour."
+        }
+      }
+    },
+    "gallery": {
+      "eyebrow": "En images",
+      "title": "Nos voyages en images",
+      "description": "Quelques souvenirs de déplacements, de découvertes et de missions menés par notre équipe.",
+      "items": {
+        "lake": {
+          "title": "Au bord du lac Kivu",
+          "place": "Est de la RDC",
+          "alt": "Un voyageur debout sur un rocher face au lac Kivu"
+        },
+        "cathedral": {
+          "title": "Notre-Dame du Congo",
+          "place": "Kinshasa",
+          "alt": "La cathédrale Notre-Dame du Congo à Kinshasa"
+        },
+        "hotel": {
+          "title": "Art et culture",
+          "place": "Hôtel à Kinshasa",
+          "alt": "Un voyageur devant une grande fresque colorée dans le hall d'un hôtel"
+        },
+        "lodge": {
+          "title": "Escale nature",
+          "place": "Lodge en RDC",
+          "alt": "Un voyageur dans le jardin verdoyant d'un lodge"
+        },
+        "businessVisit": {
+          "title": "Mission d'affaires",
+          "place": "Siège de la FEC, Kinshasa",
+          "alt": "Deux membres de l'équipe devant le siège de la Fédération des Entreprises du Congo"
+        },
+        "transport": {
+          "title": "Transport organisé",
+          "place": "Déplacements en groupe",
+          "alt": "Un minibus blanc prêt pour un transfert de groupe"
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à préparer votre voyage ?",
+      "description": "Parlez-nous de votre projet : nous revenons vers vous avec un programme et un devis adaptés.",
+      "button": "Demander un devis"
+    }
+  },
+  "partnersSection": {
+    "eyebrow": "Partenaires",
+    "title": "Ils nous font confiance",
+    "description": "Entreprises, institutions et acteurs de l'écosystème : nos partenaires nous aident à faire grandir les entrepreneurs congolais.",
+    "listLabel": "Logos de nos partenaires",
+    "joinText": "Vous souhaitez soutenir l'entrepreneuriat congolais ?",
+    "joinCta": "Devenir partenaire"
+  },
+  "statsSection": {
+    "label": "TADI LEWA GROUP en chiffres",
+    "items": {
+      "editions": "Éditions Made in Congo",
+      "exhibitors": "Exposants accompagnés",
+      "speakers": "Panélistes et intervenants",
+      "participants": "Participants à nos événements"
     }
   },
   "newsSection": {
@@ -446,6 +611,7 @@
       "solution-entreprise": "Solution entreprise",
       "partenariat": "Partenariat",
       "formation": "Formation",
+      "voyage": "Voyage",
       "autre": "Autre"
     },
     "profiles": {

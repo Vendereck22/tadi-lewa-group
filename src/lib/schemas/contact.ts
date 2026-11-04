@@ -7,6 +7,7 @@ export const contactSubjects = [
   "solution-entreprise",
   "partenariat",
   "formation",
+  "voyage",
   "autre",
 ] as const;
 
