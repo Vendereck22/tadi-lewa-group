@@ -10,7 +10,7 @@ export type Stat = {
 
 export const stats: Stat[] = [
   { id: "editions", value: 2 },
-  { id: "exhibitors", value: 500, suffix: "+" },
-  { id: "speakers", value: 50, suffix: "+" },
-  { id: "participants", value: 700, suffix: "+" },
+  { id: "exhibitors", value: 700, suffix: "+" },
+  { id: "speakers", value: 150, suffix: "+" },
+  { id: "participants", value: 2000, suffix: "+" },
 ];

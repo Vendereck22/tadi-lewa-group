@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Button } from "@/components/ui/button";
@@ -11,32 +12,42 @@ import { cn } from "@/lib/utils";
 const fadeEdges =
   "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]";
 
+// Tuile de logo : fond blanc, ou couleur d'origine du logo (noir, orange…) pour un rendu continu
 function PartnerLogo({ partner }: { partner: Partner }) {
   return (
     <div
-      style={{ "--logo": partner.color } as React.CSSProperties}
-      className="group flex h-16 shrink-0 items-center gap-3 rounded-2xl border bg-card px-6 transition-colors hover:border-brand/40 md:h-20 md:px-8"
+      style={{ backgroundColor: partner.background ?? "#ffffff" }}
+      className="relative h-20 w-40 shrink-0 overflow-hidden rounded-2xl border border-black/5 shadow-[0_4px_16px_rgb(10_42_102/0.06)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgb(10_42_102/0.12)] md:h-24 md:w-48 dark:border-white/10"
     >
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className={cn(
-          "shrink-0 fill-current text-muted-foreground transition-colors group-hover:text-(--logo)",
-          partner.logoOnly === "wide" && "size-16 md:size-20",
-          partner.logoOnly === "round" && "size-10 md:size-11",
-          !partner.logoOnly && "size-7 md:size-8",
-        )}
-      >
-        <path d={partner.path} />
-      </svg>
-      <span
-        className={cn(
-          "font-heading text-lg font-bold whitespace-nowrap text-muted-foreground transition-colors group-hover:text-foreground md:text-xl",
-          partner.logoOnly && "sr-only",
-        )}
-      >
-        {partner.name}
-      </span>
+      {partner.nameColor ? (
+        // Symbole seul : le nom est écrit à côté pour rester reconnaissable
+        <div className="flex h-full items-center justify-center gap-2.5 px-4">
+          <Image
+            src={partner.logo}
+            alt=""
+            width={partner.width}
+            height={partner.height}
+            loading="eager"
+            className="h-9 w-auto md:h-11"
+          />
+          <span
+            style={{ color: partner.nameColor }}
+            className="font-heading text-lg font-extrabold tracking-tight md:text-xl"
+          >
+            {partner.name}
+          </span>
+        </div>
+      ) : (
+        <Image
+          src={partner.logo}
+          alt={partner.name}
+          fill
+          sizes="(min-width: 768px) 192px, 160px"
+          // Les tuiles arrivent par le côté en défilant : chargées d'avance pour ne jamais apparaître vides
+          loading="eager"
+          className="object-contain p-2"
+        />
+      )}
     </div>
   );
 }

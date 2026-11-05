@@ -1,77 +1,43 @@
-import {
-  siAirtel,
-  siApple,
-  siCisco,
-  siDell,
-  siGoogle,
-  siHp,
-  siHuawei,
-  siIntel,
-  siMeta,
-  siNvidia,
-  siOrange,
-  siPaypal,
-  siSamsung,
-  siShopify,
-  siStripe,
-  siZoom,
-  type SimpleIcon,
-} from "simple-icons";
-
-// Logos partenaires affichés sur l'accueil.
-// PROVISOIRE : grandes marques tech (icônes SVG simple-icons, licence CC0) en attendant les
-// logos des vrais partenaires. Ces entreprises ne sont pas partenaires de TADI LEWA GROUP :
-// remplacer cette liste avant la mise en ligne (ex. BGFI Bank, Securico, Panda Design…).
+// Partenaires de TADI LEWA GROUP affichés sur l'accueil.
+// Logos d'origine dans public/Images/Partenaires ; versions web (recadrées, WebP) dans le
+// sous-dossier « web ». Pour ajouter un partenaire : déposer son logo dans « web » puis l'ajouter ici.
 export type Partner = {
   name: string;
-  /** Tracé SVG du logo, dans un carré de 24 × 24 */
-  path: string;
-  /** Couleur de la marque, révélée au survol */
-  color: string;
-  /**
-   * Le logo contient déjà le nom : affiché seul, en plus grand.
-   * "wide" pour un nom en ligne (Samsung…), "round" pour un badge rond (Dell)
-   */
-  logoOnly?: "wide" | "round";
+  logo: string;
+  /** Dimensions du fichier web, pour garder les proportions */
+  width: number;
+  height: number;
+  /** Couleur de fond du logo (tuile assortie) ; blanc par défaut */
+  background?: string;
+  /** Logo réduit à un symbole : le nom est écrit à côté, dans cette couleur */
+  nameColor?: string;
 };
 
-// Logos qui sont déjà le nom de la marque
-const logoOnly: Record<string, Partner["logoOnly"]> = {
-  Samsung: "wide",
-  Intel: "wide",
-  Zoom: "wide",
-  Cisco: "wide",
-  Dell: "round",
-};
-
-// Les marques noires (Apple…) prennent la couleur du texte, pour rester visibles en mode nuit
-function isNearBlack(hex: string) {
-  const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 40;
-}
-
-const fromIcon = (icon: SimpleIcon): Partner => ({
-  name: icon.title,
-  path: icon.path,
-  color: isNearBlack(icon.hex) ? "var(--foreground)" : `#${icon.hex}`,
-  logoOnly: logoOnly[icon.title],
-});
+const logo = (slug: string) => `/Images/Partenaires/web/${slug}.webp`;
 
 export const partners: Partner[] = [
-  siGoogle,
-  siApple,
-  siMeta,
-  siNvidia,
-  siSamsung,
-  siIntel,
-  siHuawei,
-  siCisco,
-  siDell,
-  siHp,
-  siZoom,
-  siStripe,
-  siPaypal,
-  siShopify,
-  siOrange,
-  siAirtel,
-].map(fromIcon);
+  { name: "Univers du Crochet", logo: logo("univers-du-crochet"), width: 480, height: 174 },
+  { name: "iRepair NextGen Tech", logo: logo("irepair"), width: 480, height: 227 },
+  { name: "BGFI Bank", logo: logo("bgfi-bank"), width: 334, height: 240 },
+  { name: "Vodacom", logo: logo("vodacom"), width: 381, height: 133 },
+  { name: "Centre Hospitalier Initiative Plus", logo: logo("chip"), width: 480, height: 171 },
+  { name: "Centre Hospitalier Universitaire du Cinquantenaire", logo: logo("chu-cinquantenaire"), width: 248, height: 240 },
+  { name: "Secours Money", logo: logo("secours-money"), width: 403, height: 240 },
+  { name: "MCE Centre de carrière", logo: logo("mce"), width: 480, height: 190 },
+  { name: "OCPT", logo: logo("ocpt"), width: 429, height: 240, background: "#010101" },
+  { name: "Innovo Care", logo: logo("innovo-care"), width: 455, height: 240 },
+  { name: "Emosp", logo: logo("emosp"), width: 298, height: 240 },
+  { name: "Marie Claire Mikobi Services", logo: logo("marie-claire-mikobi"), width: 480, height: 239 },
+  { name: "Horizon Print", logo: logo("horizon-print"), width: 480, height: 202, background: "#f7f7f7" },
+  { name: "Panda Design", logo: logo("panda-design"), width: 326, height: 240, background: "#e8e4e5" },
+  { name: "Imany Juicy", logo: logo("imany-juicy"), width: 300, height: 240 },
+  { name: "MK Cocktail", logo: logo("mk-cocktail"), width: 240, height: 240, background: "#000000" },
+  { name: "Yumi", logo: logo("yumi"), width: 394, height: 240, background: "#f9a94a" },
+  { name: "Luxury Oil by Tshupa", logo: logo("luxury-oil"), width: 241, height: 240 },
+  { name: "A&E Allure Élégance & Glow", logo: logo("allure-elegance"), width: 242, height: 240, background: "#010101" },
+  { name: "Gemme", logo: logo("gemme"), width: 440, height: 240 },
+  { name: "Madone", logo: logo("madone"), width: 317, height: 240, background: "#000000" },
+  { name: "Lou Pearls", logo: logo("lou-pearls"), width: 240, height: 240 },
+  { name: "KB Shopping", logo: logo("kb-shopping"), width: 242, height: 240, background: "#e1e1e1" },
+  { name: "Fluxion", logo: logo("fluxion"), width: 386, height: 240, nameColor: "#8f008b" },
+];
